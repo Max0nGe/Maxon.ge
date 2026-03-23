@@ -3,93 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAX0N | Системная интеграция</title>
+    <title>MAX0N | Smart systems & Security Georgia</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Space Grotesk', sans-serif; bg-color: #0a0a0a; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); }
-        .orange-accent { color: #ff5f1f; }
-        .bg-orange-accent { background-color: #ff5f1f; }
+        /* Шрифт заголовков как в Cyberpunk */
+        .tech-font { font-family: 'Audiowide', cursive; }
+        /* Шрифт основного текста */
+        body { font-family: 'Orbitron', sans-serif; background-color: #010101; color: #a1a1a1; }
+        
+        /* Неоновое свечение Cyan */
+        .neon-text { text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5); color: #00ffff; }
+        .neon-border { box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); border-color: #00ffff; }
+        .neon-bg { background-color: rgba(0, 255, 255, 0.1); border: 1px solid #00ffff; box-shadow: 0 0 15px rgba(0, 255, 255, 0.3); }
+
+        /* Эффект стекла для навигации */
+        .glass { background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(5px); border-b: 1px solid rgba(0, 255, 255, 0.1); }
+        
+        /* Сетка как в Highlights */
+        .grid-icon { width: 80px; height: 80px; border-radius: 50%; border: 2px solid rgba(0, 255, 255, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: 0.3s; }
+        .grid-item:hover .grid-icon { border-color: #00ffff; box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); color: #00ffff; }
     </style>
 </head>
-<body class="bg-[#0a0a0a] text-zinc-300">
+<body class="bg-[#010101]">
 
-    <nav class="fixed w-full z-50 glass border-b border-white/5">
+    <nav class="fixed w-full z-50 glass">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="text-2xl font-bold tracking-widest text-white">MAX<span class="orange-accent">0</span>N</span>
-            <div class="hidden md:flex space-x-10 text-xs uppercase tracking-[0.2em]">
-                <a href="#about" class="hover:text-white transition">Инженерия</a>
-                <a href="#services" class="hover:text-white transition">Решения</a>
-                <a href="#contact" class="hover:text-white transition">Связь</a>
+            <div class="flex items-center">
+                <img src="https://your-repo-name.github.io/path-to-logo.png" alt="MAX0N Logo" class="h-10 w-10 rounded-full mr-3 neon-border">
+                <span class="text-2xl font-bold tech-font tracking-wider text-white">MAX<span class="neon-text">0</span>N.GE</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest">
+                <a href="#solutions" class="hover:text-cyan-400 transition">Решения</a>
+                <a href="#contact" class="hover:text-cyan-400 transition">Связь</a>
+                <a href="https://www.instagram.com/maxon.ge/" target="_blank" class="text-cyan-500 hover:text-white"><i class="fab fa-instagram text-lg"></i></a>
             </div>
         </div>
     </nav>
 
-    <section class="relative min-h-screen flex items-center pt-20">
-        <div class="container mx-auto px-6 grid md:grid-cols-12 gap-12">
-            <div class="md:col-span-8">
-                <h1 class="text-6xl md:text-8xl font-bold text-white leading-none mb-8">
-                    SMART <br> SYSTEMS <br> <span class="orange-accent italic">GEORGIA</span>
+    <section class="relative min-h-screen flex items-center pt-24 pb-16">
+        <div class="container mx-auto px-6 text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-block bg-cyan-950 text-cyan-400 px-4 py-1 rounded-full text-xs font-bold mb-4 tracking-widest border border-cyan-800">
+                    GEORGIA | ТБИЛИСИ | БАТУМИ
+                </span>
+                <h1 class="text-5xl md:text-7xl font-bold tech-font text-white leading-none mb-6">
+                    ALWAYS IN <br> <span class="neon-text">CONTROL.</span>
                 </h1>
-                <p class="max-w-md text-lg text-zinc-500 mb-10 leading-relaxed">
-                    Профессиональное проектирование и ввод в эксплуатацию систем автоматизации, СКУД и видеонаблюдения.
+                <p class="max-w-md text-lg text-zinc-400 mb-10 leading-relaxed font-light">
+                    Комплексная автоматизация и безопасность. Умный дом, видеонаблюдение, СКУД и СКС.
                 </p>
-                <div class="flex space-x-4">
-                    <a href="#contact" class="bg-white text-black px-8 py-4 font-bold hover:bg-orange-accent hover:text-white transition duration-500">
-                        ЗАПУСТИТЬ ПРОЕКТ
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <a href="#contact" class="neon-bg text-white px-8 py-4 font-bold rounded-lg hover:bg-cyan-900 transition duration-300 text-center">
+                        ОБСУДИТЬ ПРОЕКТ
                     </a>
                 </div>
             </div>
-            <div class="md:col-span-4 flex items-end justify-end">
-                <div class="text-right border-l border-orange-accent/30 pl-6">
-                    <span class="block text-4xl font-bold text-white">01.</span>
-                    <span class="text-xs uppercase tracking-widest text-zinc-600">Always in Control</span>
+            <div class="grid grid-cols-2 gap-6 pt-12 md:pt-0">
+                <div class="grid-item text-center">
+                    <div class="grid-icon mx-auto mb-3 text-cyan-600">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-zinc-500">Smart Home</span>
+                </div>
+                <div class="grid-item text-center">
+                    <div class="grid-icon mx-auto mb-3 text-cyan-600">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-zinc-500">Networks</span>
+                </div>
+                <div class="grid-item text-center">
+                    <div class="grid-icon mx-auto mb-3 text-cyan-600">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-zinc-500">Security</span>
+                </div>
+                <div class="grid-item text-center">
+                    <div class="grid-icon mx-auto mb-3 text-cyan-600">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <span class="text-xs uppercase tracking-widest text-zinc-500">Access</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-32 border-t border-white/5">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-1px bg-white/5 border border-white/5">
-                <div class="bg-[#0a0a0a] p-12 hover:bg-zinc-900/50 transition duration-700">
-                    <span class="text-zinc-700 font-bold mb-4 block text-sm tracking-widest">ADVANCED</span>
-                    <h3 class="text-2xl font-bold text-white mb-6">Умный дом</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed">Zigbee/Wired решения. Интеграция климата, освещения и безопасности в единую экосистему.</p>
-                </div>
-                <div class="bg-[#0a0a0a] p-12 hover:bg-zinc-900/50 transition duration-700">
-                    <span class="text-zinc-700 font-bold mb-4 block text-sm tracking-widest">SECURITY</span>
-                    <h3 class="text-2xl font-bold text-white mb-6">Видеонаблюдение</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed">Аналитика событий, распознавание лиц и удаленный мониторинг объектов любой сложности.</p>
-                </div>
-                <div class="bg-[#0a0a0a] p-12 hover:bg-zinc-900/50 transition duration-700">
-                    <span class="text-zinc-700 font-bold mb-4 block text-sm tracking-widest">ACCESS</span>
-                    <h3 class="text-2xl font-bold text-white mb-6">СКУД</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed">Биометрия и бесконтактный доступ. Профессиональный монтаж и настройка логики.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-32">
+    <section id="contact" class="py-32 border-t border-cyan-950/30">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-white mb-16">ГОТОВЫ К ОБСУЖДЕНИЮ?</h2>
+            <h2 class="text-4xl font-bold tech-font text-white mb-16 neon-text">ЗАПУСТИТЬ СИСТЕМУ</h2>
             <div class="inline-flex flex-col md:flex-row gap-6">
-                <a href="https://t.me/Max0nGe" class="group relative px-12 py-6 border border-white/10 hover:border-orange-accent transition overflow-hidden">
-                    <span class="relative z-10 font-bold tracking-widest group-hover:text-white">TELEGRAM</span>
-                    <div class="absolute inset-0 bg-orange-accent translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                <a href="https://t.me/Max0nGe" target="_blank" class="flex items-center justify-center neon-bg text-white px-10 py-5 rounded-xl font-bold hover:bg-cyan-950 transition duration-300">
+                    <i class="fab fa-telegram text-2xl mr-3 text-cyan-400"></i> TELEGRAM
                 </a>
-                <a href="mailto:info@maxon.ge" class="px-12 py-6 border border-white/10 font-bold tracking-widest hover:bg-white hover:text-black transition">
-                    EMAIL: INFO@MAXON.GE
+                <a href="https://wa.me/твой-номер" target="_blank" class="flex items-center justify-center border border-zinc-700 text-zinc-400 px-10 py-5 rounded-xl font-bold hover:border-cyan-500 hover:text-white transition duration-300">
+                    <i class="fab fa-whatsapp text-2xl mr-3 text-green-500"></i> WHATSAPP
                 </a>
             </div>
         </div>
     </section>
 
-    <footer class="py-10 border-t border-white/5 text-[10px] uppercase tracking-[0.3em] text-zinc-700 text-center">
-        &copy; 2026 Max0n Integration Services. Georgia, Tbilisi / Batumi.
+    <footer class="py-10 border-t border-cyan-950/20 text-[10px] uppercase tracking-[0.4em] text-zinc-800 text-center font-light">
+        &copy; 2026 Max0n System Integration. Always in Control.
     </footer>
 
 </body>

@@ -6,11 +6,11 @@
     <title>MAX0N | Smart systems & Security Georgia</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://drive.google.com/file/d/1SYgivCfC7S6Ww01wFBpu1E9sov_ltfXm/view?usp=sharing/logo.jpg" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Шрифт заголовков как в Cyberpunk */
+        /* Шрифт для футуристичных акцентов */
         .tech-font { font-family: 'Audiowide', cursive; }
-        /* Шрифт основного текста */
+        /* Основной строгий шрифт сайта */
         body { font-family: 'Orbitron', sans-serif; background-color: #010101; color: #a1a1a1; }
         
         /* Неоновое свечение Cyan */
@@ -19,9 +19,9 @@
         .neon-bg { background-color: rgba(0, 255, 255, 0.1); border: 1px solid #00ffff; box-shadow: 0 0 15px rgba(0, 255, 255, 0.3); }
 
         /* Эффект стекла для навигации */
-        .glass { background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(5px); border-b: 1px solid rgba(0, 255, 255, 0.1); }
+        .glass { background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(5px); border-bottom: 1px solid rgba(0, 255, 255, 0.1); }
         
-        /* Сетка как в Highlights */
+        /* Стилизация иконок под Highlights Instagram */
         .grid-icon { width: 80px; height: 80px; border-radius: 50%; border: 2px solid rgba(0, 255, 255, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: 0.3s; }
         .grid-item:hover .grid-icon { border-color: #00ffff; box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); color: #00ffff; }
     </style>
@@ -31,13 +31,15 @@
     <nav class="fixed w-full z-50 glass">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center">
-                <img src="https://drive.google.com/file/d/1SYgivCfC7S6Ww01wFBpu1E9sov_ltfXm/view?usp=sharing" alt="MAX0N Logo" class="h-10 w-10 rounded-full mr-3 neon-border">
+                <img src="logo.png" alt="MAX0N Logo" class="h-10 w-10 rounded-full mr-3 neon-border object-cover">
                 <span class="text-2xl font-bold tech-font tracking-wider text-white">MAX<span class="neon-text">0</span>N.GE</span>
             </div>
-            <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest">
+            <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest text-white">
                 <a href="#solutions" class="hover:text-cyan-400 transition">Решения</a>
                 <a href="#contact" class="hover:text-cyan-400 transition">Связь</a>
-                <a href="https://www.instagram.com/maxon.ge/" target="_blank" class="text-cyan-500 hover:text-white"><i class="fab fa-instagram text-lg"></i></a>
+                <a href="https://www.instagram.com/maxon.ge/" target="_blank" class="text-cyan-500 hover:text-white transition">
+                    <i class="fab fa-instagram text-lg"></i>
+                </a>
             </div>
         </div>
     </nav>
@@ -45,8 +47,8 @@
     <section class="relative min-h-screen flex items-center pt-24 pb-16">
         <div class="container mx-auto px-6 text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
             <div>
-                <span class="inline-block bg-cyan-950 text-cyan-400 px-4 py-1 rounded-full text-xs font-bold mb-4 tracking-widest border border-cyan-800">
-                    GEORGIA | ТБИЛИСИ | БАТУМИ
+                <span class="inline-block bg-cyan-950 text-cyan-400 px-4 py-1 rounded-full text-xs font-bold mb-4 tracking-widest border border-cyan-800 uppercase">
+                    Georgia | Tbilisi | Batumi
                 </span>
                 <h1 class="text-5xl md:text-7xl font-bold tech-font text-white leading-none mb-6">
                     ALWAYS IN <br> <span class="neon-text">CONTROL.</span>
@@ -54,36 +56,37 @@
                 <p class="max-w-md text-lg text-zinc-400 mb-10 leading-relaxed font-light">
                     Комплексная автоматизация и безопасность. Умный дом, видеонаблюдение, СКУД и СКС.
                 </p>
-                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                    <a href="#contact" class="neon-bg text-white px-8 py-4 font-bold rounded-lg hover:bg-cyan-900 transition duration-300 text-center">
-                        ОБСУДИТЬ ПРОЕКТ
+                <div class="flex flex-col md:flex-row">
+                    <a href="#contact" class="neon-bg text-white px-8 py-4 font-bold rounded-lg hover:bg-cyan-900 transition duration-300 text-center uppercase tracking-wider">
+                        Обсудить проект
                     </a>
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-6 pt-12 md:pt-0">
-                <div class="grid-item text-center">
+            
+            <div id="solutions" class="grid grid-cols-2 gap-6 pt-12 md:pt-0">
+                <div class="grid-item text-center group cursor-default">
                     <div class="grid-icon mx-auto mb-3 text-cyan-600">
                         <i class="fas fa-home"></i>
                     </div>
-                    <span class="text-xs uppercase tracking-widest text-zinc-500">Smart Home</span>
+                    <span class="text-xs uppercase tracking-widest text-zinc-500 group-hover:text-cyan-400 transition">Smart Home</span>
                 </div>
-                <div class="grid-item text-center">
+                <div class="grid-item text-center group cursor-default">
                     <div class="grid-icon mx-auto mb-3 text-cyan-600">
                         <i class="fas fa-wifi"></i>
                     </div>
-                    <span class="text-xs uppercase tracking-widest text-zinc-500">Networks</span>
+                    <span class="text-xs uppercase tracking-widest text-zinc-500 group-hover:text-cyan-400 transition">Networks</span>
                 </div>
-                <div class="grid-item text-center">
+                <div class="grid-item text-center group cursor-default">
                     <div class="grid-icon mx-auto mb-3 text-cyan-600">
                         <i class="fas fa-video"></i>
                     </div>
-                    <span class="text-xs uppercase tracking-widest text-zinc-500">Security</span>
+                    <span class="text-xs uppercase tracking-widest text-zinc-500 group-hover:text-cyan-400 transition">Security</span>
                 </div>
-                <div class="grid-item text-center">
+                <div class="grid-item text-center group cursor-default">
                     <div class="grid-icon mx-auto mb-3 text-cyan-600">
                         <i class="fas fa-lock"></i>
                     </div>
-                    <span class="text-xs uppercase tracking-widest text-zinc-500">Access</span>
+                    <span class="text-xs uppercase tracking-widest text-zinc-500 group-hover:text-cyan-400 transition">Access</span>
                 </div>
             </div>
         </div>
@@ -91,19 +94,21 @@
 
     <section id="contact" class="py-32 border-t border-cyan-950/30">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold tech-font text-white mb-16 neon-text">ЗАПУСТИТЬ СИСТЕМУ</h2>
+            <h2 class="text-4xl font-bold uppercase tracking-[0.2em] text-white mb-16 neon-text">
+                ЗАПУСТИТЬ СИСТЕМУ
+            </h2>
             <div class="inline-flex flex-col md:flex-row gap-6">
-                <a href="https://t.me/Max0nGe" target="_blank" class="flex items-center justify-center neon-bg text-white px-10 py-5 rounded-xl font-bold hover:bg-cyan-950 transition duration-300">
+                <a href="https://t.me/Max0n_ge" target="_blank" class="flex items-center justify-center neon-bg text-white px-10 py-5 rounded-xl font-bold hover:bg-cyan-950 transition duration-300 min-w-[240px]">
                     <i class="fab fa-telegram text-2xl mr-3 text-cyan-400"></i> TELEGRAM
                 </a>
-                <a href="https://wa.me/твой-номер" target="_blank" class="flex items-center justify-center border border-zinc-700 text-zinc-400 px-10 py-5 rounded-xl font-bold hover:border-cyan-500 hover:text-white transition duration-300">
+                <a href="https://wa.me/995599501886" target="_blank" class="flex items-center justify-center border border-zinc-700 text-zinc-400 px-10 py-5 rounded-xl font-bold hover:border-cyan-500 hover:text-white transition duration-300 min-w-[240px]">
                     <i class="fab fa-whatsapp text-2xl mr-3 text-green-500"></i> WHATSAPP
                 </a>
             </div>
         </div>
     </section>
 
-    <footer class="py-10 border-t border-cyan-950/20 text-[10px] uppercase tracking-[0.4em] text-zinc-800 text-center font-light">
+    <footer class="py-10 border-t border-cyan-950/20 text-[10px] uppercase tracking-[0.4em] text-zinc-700 text-center font-light">
         &copy; 2026 Max0n System Integration. Always in Control.
     </footer>
 

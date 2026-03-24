@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Integration | Max0n</title>
+    
+    <link rel="icon" type="image/png" href="img/logo-full.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root { --neon-cyan: #00f2ff; --bg-dark: #0B0B0B; }
+        body { background-color: var(--bg-dark); font-family: 'Inter', sans-serif; color: #e5e7eb; overflow-x: hidden; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .glass { background: rgba(17, 17, 17, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(0, 242, 255, 0.1); }
+        .neon-btn { border: 1px solid var(--neon-cyan); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; cursor: pointer; }
+        .neon-btn:hover { background: rgba(0, 242, 255, 0.15); box-shadow: 0 0 25px rgba(0, 242, 255, 0.5), inset 0 0 10px rgba(0, 242, 255, 0.2); transform: translateY(-2px); border-color: #fff; }
+        .neon-text { color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0, 242, 255, 0.4); }
+        .feature-card:hover { border-color: var(--neon-cyan); transform: translateY(-5px); transition: all 0.4s ease; }
+        .step-number { font-size: 4rem; opacity: 0.05; position: absolute; right: 10px; top: -10px; font-weight: 800; }
+        
+        /* Стили для кастомных чекбоксов */
+        .cb-container { display: block; position: relative; padding-left: 35px; margin-bottom: 12px; cursor: pointer; font-size: 14px; user-select: none; color: #a1a1aa; transition: 0.3s; }
+        .cb-container:hover { color: #fff; }
+        .cb-container input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
+        .checkmark { position: absolute; top: -2px; left: 0; height: 20px; width: 20px; background-color: transparent; border: 1px solid #52525b; border-radius: 4px; transition: 0.3s; }
+        .cb-container:hover input ~ .checkmark { border-color: var(--neon-cyan); }
+        .cb-container input:checked ~ .checkmark { background-color: rgba(0, 242, 255, 0.2); border-color: var(--neon-cyan); box-shadow: 0 0 10px rgba(0, 242, 255, 0.3); }
+        .checkmark:after { content: ""; position: absolute; display: none; }
+        .cb-container input:checked ~ .checkmark:after { display: block; }
+        .cb-container .checkmark:after { left: 6px; top: 2px; width: 6px; height: 12px; border: solid var(--neon-cyan); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+    </style>
+</head>
+<body class="pt-24">
+
+    <nav class="fixed top-0 w-full z-50 glass py-4 border-b border-white/5">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <img src="img/logo-full.png" alt="MAXON" class="h-10 w-auto grayscale transition-all duration-500 group-hover:grayscale-0">
+            </a>
+            <a href="index.html" class="mono text-[10px] uppercase tracking-widest hover:neon-text transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i> Вернуться
+            </a>
+        </div>
+    </nav>
+
+    <section class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <p class="mono text-cyan-500 text-[10px] tracking-[0.5em] mb-4 uppercase" data-aos="fade-down">
+                [ SERVICE: SMART_HOME.LOG ]
+            </p>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tighter uppercase mb-8" data-aos="fade-up">
+                [ SMART_HOME: <span class="neon-text">INTEGRATION.LOG</span> ]
+            </h1>
+            <div class="max-w-3xl glass p-8 rounded-2xl border-l-4 border-l-cyan-500" data-aos="fade-right">
+                <p class="text-lg md:text-xl text-zinc-300 font-light leading-relaxed italic">
+                    «Умный дом — это не набор гаджетов, а сложная инженерная логика. Мы создаем экосистемы, которые работают незаметно, обеспечивая ваш комфорт и безопасность без лишних движений. Локальное управление, полная приватность и безупречный монтаж».
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-[#0d0d0d]">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass p-8 rounded-2xl feature-card" data-aos="zoom-in">
+                    <i class="fas fa-thermometer-half text-2xl neon-text mb-6"></i>
+                    <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ CLIMATE_CONTROL ]</h3>
+                    <p class="text-xs text-zinc-500 leading-relaxed">Интеграция всех систем отопления (радиаторы, теплый пол) и кондиционирования в единый сценарий. Экономия энергоресурсов до 25%.</p>
+                </div>
+                <div class="glass p-8 rounded-2xl feature-card" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-lightbulb text-2xl neon-text mb-6"></i>
+                    <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ SMART_LIGHTING ]</h3>
+                    <p class="text-xs text-zinc-500 leading-relaxed">Биодинамическое освещение и сценарии «Кино», «Я ушел». Управление любыми типами ламп и штор из единого интерфейса.</p>
+                </div>
+                <div class="glass p-8 rounded-2xl feature-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-shield-alt text-2xl neon-text mb-6"></i>
+                    <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ SECURITY_LOGIC ]</h3>
+                    <p class="text-xs text-zinc-500 leading-relaxed">Защита от протечек, датчики дыма и газа. Умные замки и видеодомофония с распознаванием лиц и мгновенными уведомлениями.</p>
+                </div>
+                <div class="glass p-8 rounded-2xl feature-card" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-music text-2xl neon-text mb-6"></i>
+                    <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ MULTIMEDIA ]</h3>
+                    <p class="text-xs text-zinc-500 leading-relaxed">Управление медиазонами и аудиосистемами по всему дому. Автоматическое приглушение звука при вызовах или звонках.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 border-y border-white/5">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mono uppercase mb-16 text-center tracking-widest">Техническая <span class="neon-text">Философия</span></h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center" data-aos="fade-up">
+                    <div class="inline-block p-4 rounded-full bg-cyan-500/10 mb-6"><i class="fas fa-server neon-text text-xl"></i></div>
+                    <h4 class="mono text-xs mb-4 uppercase tracking-widest">[ LOCAL_FIRST ]</h4>
+                    <p class="text-sm text-zinc-500 font-light px-4">Ваша система работает на локальном сервере. Даже если пропадет интернет — дом останется умным.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="inline-block p-4 rounded-full bg-cyan-500/10 mb-6"><i class="fas fa-user-lock neon-text text-xl"></i></div>
+                    <h4 class="mono text-xs mb-4 uppercase tracking-widest">[ DATA_PRIVACY ]</h4>
+                    <p class="text-sm text-zinc-500 font-light px-4">Видеопотоки и логи событий не покидают периметр вашей сети. Никакого внешнего доступа без разрешения.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="inline-block p-4 rounded-full bg-cyan-500/10 mb-6"><i class="fas fa-microchip neon-text text-xl"></i></div>
+                    <h4 class="mono text-xs mb-4 uppercase tracking-widest">[ CLEAN_MOUNTING ]</h4>
+                    <p class="text-sm text-zinc-500 font-light px-4">Промышленный стандарт сборки щитов. Каждый провод промаркирован, каждый узел эстетически выверен.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-[#080808]">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mono text-[10px] text-zinc-600 mb-12 tracking-[0.4em]">CURRENT_TECH_STACK</p>
+            <div class="flex flex-wrap justify-center gap-4 text-xs mono">
+                <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">KINCONY</span>
+                <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">AQARA</span>
+                <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">HOME ASSISTANT</span>
+                <span class="px-4 py-2 border border-white/10 rounded-full text-cyan-500 border-cyan-500/30">MATTER</span>
+                <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">ZIGBEE</span>
+                <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">SPRUT.HUB</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 border-t border-white/5 relative overflow-hidden">
+        <div class="container mx-auto px-6 max-w-4xl relative z-10" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mono uppercase tracking-[0.2em] mb-4">[ SYSTEM_<span class="neon-text">CONFIGURATOR</span> ]</h2>
+                <p class="text-sm text-zinc-400">Выберите модули комфорта и безопасности для вашего объекта, и система сформирует запрос для оценки.</p>
+            </div>
+
+            <form id="calcForm" class="glass p-8 md:p-12 rounded-2xl">
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
+                    <label class="cb-container">Управление климатом (Отопление, теплый пол, кондиционеры)
+                        <input type="checkbox" value="Управление климатом">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="cb-container">Световые сценарии и биодинамическое освещение
+                        <input type="checkbox" value="Световые сценарии">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="cb-container">Моторизованные шторы и жалюзи
+                        <input type="checkbox" value="Управление шторами/жалюзи">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="cb-container">Мультирум и управление медиа
+                        <input type="checkbox" value="Мультимедиа и аудио">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="cb-container">Защита от протечек (автоматические краны)
+                        <input type="checkbox" value="Антипотоп (защита от протечек)">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="cb-container">Охранная сигнализация и умные замки
+                        <input type="checkbox" value="Охранный контур и умные замки">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="cb-container">Интеграция видеонаблюдения (CCTV)
+                        <input type="checkbox" value="Интеграция видеонаблюдения">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="cb-container">Голосовое управление (Алиса / Siri)
+                        <input type="checkbox" value="Голосовое управление">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+
+                <div class="text-center">
+                    <button type="button" onclick="sendToWhatsApp()" class="neon-btn inline-block px-10 py-5 neon-text mono text-xs uppercase tracking-[0.2em] font-bold w-full md:w-auto">
+                        <i class="fab fa-whatsapp text-lg mr-2"></i> Отправить запрос в Max0n
+                    </button>
+                    <p class="mono text-[9px] text-zinc-600 mt-4 tracking-widest uppercase">* Будет сформировано сообщение для WhatsApp</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function sendToWhatsApp() {
+            // Собираем все отмеченные чекбоксы
+            const checkboxes = document.querySelectorAll('#calcForm input[type="checkbox"]:checked');
+            let selectedModules = [];
+            
+            checkboxes.forEach((cb) => {
+                selectedModules.push("▪️ " + cb.value);
+            });
+
+            // Формируем текст сообщения
+            let text = "Здравствуйте, команда Max0n! Хочу обсудить интеграцию инженерных систем на моем объекте. Меня интересуют следующие модули комфорта и безопасности:\n\n";
+
+            if(selectedModules.length > 0) {
+                text += selectedModules.join("\n");
+            } else {
+                text += "▪️ Базовая консультация и подбор архитектуры";
+            }
+
+            text += "\n\nЖду обратной связи!";
+
+            // Кодируем текст для URL и открываем WhatsApp (использую твой номер)
+            const encodedText = encodeURIComponent(text);
+            const waNumber = "995599501886";
+            window.open(`https://wa.me/${waNumber}?text=${encodedText}`, '_blank');
+        }
+    </script>
+
+    <section class="py-24 border-t border-white/5 bg-[#080808]">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-10 rounded-2xl relative overflow-hidden" data-aos="fade-right">
+                    <span class="step-number mono">01</span>
+                    <h4 class="mono text-xs neon-text mb-4 uppercase tracking-widest">[ SYSTEM_ANALYSIS ]</h4>
+                    <p class="text-sm text-zinc-400 leading-relaxed relative z-10">Обсуждаем задачи, выявляем потребности и проектируем индивидуальную алгоритмическую логику.</p>
+                </div>
+                <div class="glass p-10 rounded-2xl relative overflow-hidden" data-aos="fade-right" data-aos-delay="100">
+                    <span class="step-number mono">02</span>
+                    <h4 class="mono text-xs neon-text mb-4 uppercase tracking-widest">[ CLEAN_DEPLOYMENT ]</h4>
+                    <p class="text-sm text-zinc-400 leading-relaxed relative z-10">Чистый IT-монтаж оборудования в щиты и аккуратная интеграция датчиков на объекте.</p>
+                </div>
+                <div class="glass p-10 rounded-2xl relative overflow-hidden" data-aos="fade-right" data-aos-delay="200">
+                    <span class="step-number mono">03</span>
+                    <h4 class="mono text-xs neon-text mb-4 uppercase tracking-widest">[ MONITORING_START ]</h4>
+                    <p class="text-sm text-zinc-400 leading-relaxed relative z-10">Передача всех ключей управления владельцу и пожизненная техподдержка 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center">
+        <p class="mono text-[9px] text-zinc-600 tracking-widest uppercase">© 2026 MAX0N // ENGINEERING BUREAU // GEORGIA</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио | Max0n Control.</title>
+    
+    <link rel="icon" type="image/png" href="img/logo-full.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root { --neon-cyan: #00f2ff; --bg-dark: #0B0B0B; }
+        body { background-color: var(--bg-dark); font-family: 'Inter', sans-serif; color: #e5e7eb; overflow-x: hidden; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .glass { background: rgba(17, 17, 17, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(0, 242, 255, 0.1); }
+        .neon-btn { border: 1px solid var(--neon-cyan); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; }
+        .neon-btn:hover { background: rgba(0, 242, 255, 0.15); box-shadow: 0 0 25px rgba(0, 242, 255, 0.5), inset 0 0 10px rgba(0, 242, 255, 0.2); transform: translateY(-2px); border-color: #fff; }
+        .neon-text { color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0, 242, 255, 0.4); }
+        .case-card:hover { border-color: var(--neon-cyan); box-shadow: 0 10px 40px rgba(0,242,255,0.05); }
+        .case-img-container { overflow: hidden; }
+        .case-img-container img { transition: transform 0.7s ease, filter 0.5s ease; filter: grayscale(80%) brightness(0.8); }
+        .case-card:hover .case-img-container img { transform: scale(1.05); filter: grayscale(0%) brightness(1); }
+    </style>
+</head>
+<body class="pt-24">
+
+    <nav class="fixed top-0 w-full z-50 glass py-3 border-b border-cyan-500/10">
+        <div class="container mx-auto px-6 flex justify-between items-center relative z-10">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <img src="img/logo-full.png" alt="MAX0N" class="h-10 lg:h-12 w-auto grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
+                <div class="h-8 w-px bg-zinc-800 lg:h-10"></div>
+                <span class="text-[8px] mono text-zinc-500 tracking-[0.5em] uppercase hidden sm:block">Engineering Bureau</span>
+            </a>
+            
+            <div class="hidden lg:flex space-x-8 text-[10px] uppercase tracking-[0.3em] mono">
+                <a href="smart-home.html" class="hover:neon-text transition text-zinc-500">Smart Home</a>
+                <a href="security.html" class="hover:neon-text transition text-zinc-500">Security</a>
+                <a href="networks.html" class="hover:neon-text transition text-zinc-500">Networks</a>
+                <a href="portfolio.html" class="neon-text font-bold transition">Portfolio</a>
+            </div>
+
+            <div class="flex items-center space-x-4 mono text-[10px]">
+                <a href="https://wa.me/995599501886" class="hover:neon-text transition"><i class="fab fa-whatsapp text-lg"></i></a>
+                <span class="opacity-20">/</span>
+                <a href="index.html" class="hover:text-cyan-400 transition">BACK_TO_MAIN</a>
+            </div>
+        </div>
+        <div class="absolute inset-x-0 bottom-0 h-px bg-cyan-900 shadow-[0_0_10px_rgba(0,242,255,0.2)] opacity-30"></div>
+    </nav>
+
+    <section class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <p class="mono text-cyan-500 text-[10px] tracking-[0.5em] mb-4 uppercase" data-aos="fade-down">
+                [ ACCESS_LEVEL: PUBLIC_RECORDS ]
+            </p>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tighter uppercase mb-8" data-aos="fade-up">
+                [ PORTFOLIO: <span class="neon-text">DEPLOYED_SYSTEMS.LOG</span> ]
+            </h1>
+            <div class="max-w-4xl glass p-8 rounded-2xl border-l-4 border-l-cyan-500" data-aos="fade-right">
+                <p class="text-lg md:text-xl text-zinc-300 font-light leading-relaxed italic">
+                    «Мы ценим приватность наших клиентов. Поэтому в портфолио мы не показываем интерьеры спален, а демонстрируем то, чем гордимся — безупречную инженерную архитектуру, чистый монтаж и алгоритмику реализованных объектов в Грузии».
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 pb-24">
+        <div class="container mx-auto px-6 space-y-16">
+            
+            <div class="glass rounded-2xl border border-white/5 case-card overflow-hidden" data-aos="fade-up">
+                <div class="grid lg:grid-cols-2">
+                    <div class="case-img-container h-64 lg:h-auto border-b lg:border-b-0 lg:border-r border-white/5 relative">
+                        <div class="absolute inset-0 flex items-center justify-center bg-zinc-900 text-zinc-700 mono text-xs">[ PHOTO: MAIN_RACK_NEON.JPG ]</div>
+                        <img src="img/case-residence.jpg" alt="Сборка щита" class="w-full h-full object-cover relative z-10 opacity-0 transition-opacity duration-300" onload="this.classList.remove('opacity-0')">
+                    </div>
+                    <div class="p-8 lg:p-12 flex flex-col justify-center">
+                        <div class="flex items-center mb-4">
+                            <span class="mono text-[10px] bg-cyan-500/10 text-cyan-500 px-3 py-1 rounded-full tracking-widest border border-cyan-500/20">SMART HOME</span>
+                        </div>
+                        <h2 class="text-2xl font-bold mono uppercase mb-6 tracking-widest">[ CASE_01: RESIDENCE_TBILISI.LOG ]</h2>
+                        <p class="text-sm text-zinc-400 font-light leading-relaxed mb-8">
+                            Полная автоматизация климата (интеграция теплых полов и фанкойлов), сценарное освещение и контроль протечек. Управление выведено на кастомные планшеты и смартфоны владельцев без использования внешних облачных серверов. Локальная работа 24/7.
+                        </p>
+                        <div class="mt-auto">
+                            <p class="mono text-[10px] text-zinc-600 mb-3 tracking-[0.2em] uppercase">Tech Stack:</p>
+                            <div class="flex flex-wrap gap-2 text-xs mono">
+                                <span class="px-3 py-1 border border-white/10 rounded-md text-zinc-400">Kincony</span>
+                                <span class="px-3 py-1 border border-white/10 rounded-md text-zinc-400">Sprut.hub</span>
+                                <span class="px-3 py-1 border border-white/10 rounded-md text-zinc-400">Zigbee</span>
+                                <span class="px-3 py-1 border border-white/10 rounded-md text-zinc-400">Apple HomeKit</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass rounded-2xl border border-white/5 case-card overflow-hidden" data-aos="fade-up">
+                <div class="grid lg:grid-cols-2">
+                    <div class="p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
+                        <div class="flex items-center mb-4">
+                            <span class="mono text-[10px] bg-cyan-500/10 text-cyan-500 px-3 py-1 rounded-full tracking-widest border border-cyan-500/20">IT NETWORKS & CLIMATE</span>
+                        </div>
+                        <h2 class="text-2xl font-bold mono uppercase mb-6 tracking-widest">[ CASE_02: HOTEL_INFRASTRUCTURE.LOG ]</h2>
+                        <p class="text-sm text-zinc-400 font-light leading-relaxed mb-8">
+                            Проектирование и пусконаладка бесшовной гигабитной Wi-Fi сети для гостей и персонала. Интеграция VRF-системы кондиционирования с централизованным управлением из зоны ресепшн. Мониторинг нагрузки на сеть в реальном времени.
+                        </p>
+                        <div class="mt-auto">
+                            <p class="mono text-[10px] text-zinc-600 mb-3 tracking-[0.2em] uppercase">Tech Stack:</p>
+                            <div class="flex flex-wrap gap-2 text-xs mono">
+                                <span class="px-3 py-1 border border-white/10 rounded-md text-zinc-400">Keenetic / Netcraze</span>
+                                <span class="px-3 py-1 border border-white/10 rounded-md text-zinc-400">VLAN</span>
+                                <span class="px-3 py-1 border border-white/10 rounded-md text-zinc-400">Modbus</span>
+                                <span class="px-3 py-1 border border-white/10 rounded-md text-zinc-400">Zabbix</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-img-container h-64 lg:h-auto border-b lg:border-b-0 lg:border-l border-white/5 order-1 lg:order-2 relative">
+                        <div class="absolute inset-0 flex items-center justify-center bg-zinc-900 text-zinc-700 mono text-xs">[ PHOTO: ENGINEER_CLIMATE.JPG ]</div>
+                        <img src="img/case-hotel.jpg" alt="Настройка сети" class="w-full h-full object-cover relative z-10 opacity-0 transition-opacity duration-300" onload="this.classList.remove('opacity-0')">
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass rounded-2xl border border-white/5 case-card overflow-hidden" data-aos="fade-up">
+                <div class="grid lg:grid-cols-2">
+                    <div class="case-img-container h-64 lg:h-auto border-b lg:border-b-0 lg:border-r border-white/5 relative">
+                        <div class="absolute inset-0 flex items-center justify-center bg-zinc-900 text-zinc-700 mono text-xs">[ PHOTO: SERVER_RACK_10U.JPG ]</div>
+                        <img src="img/case-perimeter.jpg" alt="Серверный шкаф" class="w-full h-full object-cover relative z-10 opacity-0 transition-opacity duration-300" onload="this.classList.remove('opacity-0')">
+                    </div>
+                    <div class="p-8 lg:p-12 flex flex-col justify-center">
+                        <div class="flex items-center mb-4">
+                            <span class="mono text-[10px] bg-cyan-500/10 text-cyan-500 px-3 py-1 rounded-full tracking-widest border border-cyan-500/20">SECURITY & CCTV</span>
+                        </div>
+                        <h2 class="text-2xl font-bold mono uppercase mb-6 tracking-widest">[ CASE_03: PERIMETER_DEFENSE.LOG ]</h2>
+                        <p class="text-sm text-zinc-400 font-light leading-relaxed mb-8">
+                            Организация замкнутого контура IP-видеонаблюдения высокого разрешения. Установка систем бесперебойного резервного питания для NVR. Интеграция умных замков на калитки с удаленной генерацией временных ключей-доступов для персонала.
+                        </p>
+                        <div class="mt-auto">
+                            <p class="mono text-[10px] text-zinc-600 mb-3 tracking-[0.2em] uppercase">Tech Stack:</p>
+                            <div class="flex flex-wrap gap-2 text-xs mono">
+                                <span class="px-3 py-1 border border-white/10 rounded-md text-zinc-400">PoE+</span>
+                                <span class="px-3 py-1 border border-white/10 rounded-md text-zinc-400">Secure VPN</span>
+                                <span class="px-3 py-1 border border-white/10 rounded-md text-zinc-400">NVR 4K</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="py-12 bg-[#080808] border-t border-white/5 text-center">
+        <a href="https://wa.me/995599501886" class="neon-btn inline-block px-10 py-4 neon-text mono text-xs uppercase tracking-[0.2em] font-bold mb-8">
+            <i class="fa-solid fa-terminal mr-2"></i> Инициировать проект
+        </a>
+        <p class="mono text-[9px] text-zinc-600 tracking-widest uppercase block">© 2026 MAX0N // ENGINEERING BUREAU // GEORGIA</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<html lang="ka" class="scroll-smooth">
 <head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTE928Y9DB"></script>
 <script>
@@ -17,7 +17,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-KGPPP259');</script>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Home Integration | Max0n</title>
+    <title>Smart Home Integration | Max0n Control.</title>
     
     <link rel="icon" type="image/png" href="img/logo-full.png">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -28,11 +28,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <style>
         :root { --neon-cyan: #00f2ff; --bg-dark: #0B0B0B; }
         body { background-color: var(--bg-dark); font-family: 'Inter', sans-serif; color: #e5e7eb; overflow-x: hidden; }
+        
+        /* Специальный стиль для грузинского шрифта (читаемость) */
+        html[lang="ka"] body { line-height: 1.8; letter-spacing: 0.03em; }
+
         .mono { font-family: 'JetBrains Mono', monospace; }
         .glass { background: rgba(17, 17, 17, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(0, 242, 255, 0.1); }
         .step-number { font-size: 4rem; opacity: 0.05; position: absolute; right: 10px; top: -10px; font-weight: 800; }
         
-        /* Стили для карточек с фоном */
         .feature-card { position: relative; overflow: hidden; background: transparent !important; z-index: 1; }
         .feature-card:hover { border-color: var(--neon-cyan); transform: translateY(-5px); transition: all 0.4s ease; box-shadow: 0 10px 30px -10px rgba(0,242,255,0.2); }
         .feature-card::before { content: ''; position: absolute; inset: 0; background-image: var(--bg-image); background-size: cover; background-position: center; z-index: -2; opacity: 0.25; transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease, filter 0.5s ease; filter: grayscale(100%); }
@@ -40,7 +43,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .feature-card:hover::before { transform: scale(1.1); opacity: 0.6; filter: grayscale(0%); }
         .feature-card > * { position: relative; z-index: 2; }
 
-        /* Стили для чекбоксов */
         .cb-container { display: block; position: relative; padding-left: 35px; margin-bottom: 12px; cursor: pointer; font-size: 14px; user-select: none; color: #a1a1aa; transition: 0.3s; }
         .cb-container:hover { color: #fff; }
         .cb-container input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
@@ -51,7 +53,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .cb-container input:checked ~ .checkmark:after { display: block; }
         .cb-container .checkmark:after { left: 6px; top: 2px; width: 6px; height: 12px; border: solid var(--neon-cyan); border-width: 0 2px 2px 0; transform: rotate(45deg); }
 
-        /* Стили для кнопок соцсетей */
         .social-btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid transparent; position: relative; cursor: pointer; }
         .btn-wa { border-color: #25D366; color: #25D366; }
         .btn-wa:hover { background: rgba(37, 211, 102, 0.1); box-shadow: 0 0 20px rgba(37, 211, 102, 0.4), inset 0 0 10px rgba(37, 211, 102, 0.2); border-color: #25D366; }
@@ -64,29 +65,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </style>
 </head>
 <body class="pt-24">
+
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGPPP259"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav class="fixed top-0 w-full z-50 glass py-3 border-b border-cyan-500/10">
         <div class="container mx-auto px-6 flex justify-between items-center relative z-10">
             
-            <a href="index.html" class="flex items-center space-x-3 group relative">
+            <a href="index-ge.html" class="flex items-center space-x-3 group relative">
                 <img src="img/logo-full.png" alt="MAXON" class="h-10 lg:h-12 w-auto transition-all duration-500 group-hover:scale-105">
                 <div class="h-8 w-px bg-zinc-800 lg:h-10"></div>
-                <span class="text-[8px] mono text-zinc-500 tracking-[0.5em] uppercase hidden sm:block">Engineering Bureau</span>
+                <span class="text-[8px] mono text-zinc-500 tracking-[0.5em] uppercase hidden sm:block">საინჟინრო ბიურო</span>
             </a>
             
             <div class="hidden lg:flex space-x-8 text-[10px] uppercase tracking-[0.3em] mono">
-                <a href="index.html" class="hover:text-cyan-400 transition text-zinc-500">Main</a>
-                <a href="security.html" class="hover:text-cyan-400 transition text-zinc-500">Security</a>
-                <a href="networks.html" class="hover:text-cyan-400 transition text-zinc-500">Networks</a>
-                <a href="portfolio.html" class="hover:text-cyan-400 transition text-zinc-500">Portfolio</a>
+                <a href="index-ge.html" class="hover:text-cyan-400 transition text-zinc-500">მთავარი</a>
+                <a href="smart-home-ge.html" class="text-cyan-400 font-bold transition">Smart Home</a>
+                <a href="security-ge.html" class="hover:text-cyan-400 transition text-zinc-500">Security</a>
+                <a href="networks-ge.html" class="hover:text-cyan-400 transition text-zinc-500">Networks</a>
+                <a href="portfolio-ge.html" class="hover:text-cyan-400 transition text-zinc-500">Portfolio</a>
             </div>
 
             <div class="flex items-center space-x-4 mono text-[10px]">
                 <div class="hidden md:flex space-x-4 items-center">
-                    <a href="#" class="neon-text">RU</a>
+                    <a href="smart-home.html" class="hover:text-cyan-400 transition">RU</a>
                     <span class="opacity-20">/</span>
-                    <a href="smart-home-ge.html" class="hover:text-cyan-400 transition">KA</a>
+                    <a href="#" class="neon-text">GE</a>
                     <span class="opacity-20">/</span>
                     <a href="smart-home-en.html" class="hover:text-cyan-400 transition">EN</a>
                 </div>
@@ -98,16 +101,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div id="mobile-menu" class="lg:hidden bg-[#0B0B0B]/95 backdrop-blur-xl border-b border-cyan-500/20 absolute w-full left-0 top-full transition-all duration-300 ease-out opacity-0 invisible -translate-y-4">
             <div class="flex flex-col px-6 py-6 space-y-4 text-[12px] uppercase tracking-[0.3em] mono text-center">
-                <a href="index.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Main</a>
-                <a href="security.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Security</a>
-                <a href="networks.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Networks</a>
-                <a href="portfolio.html" class="hover:neon-text transition text-zinc-400 py-3">Portfolio</a>
+                <a href="index-ge.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">მთავარი</a>
+                <a href="smart-home-ge.html" class="neon-text transition py-3 border-b border-white/5">Smart Home</a>
+                <a href="security-ge.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Security</a>
+                <a href="networks-ge.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Networks</a>
+                <a href="portfolio-ge.html" class="hover:neon-text transition text-zinc-400 py-3">Portfolio</a>
                 <div class="flex justify-center space-x-6 pt-6 border-t border-white/5">
-                    <a href="#" class="neon-text">RU</a>
+                    <a href="smart-home.html" class="hover:text-cyan-400 transition">RU</a>
                     <span class="opacity-20">|</span>
-                    <a href="#" class="hover:text-cyan-400 transition">GE</a>
+                    <a href="#" class="neon-text">GE</a>
                     <span class="opacity-20">|</span>
-                    <a href="#" class="hover:text-cyan-400 transition">EN</a>
+                    <a href="smart-home-en.html" class="hover:text-cyan-400 transition">EN</a>
                 </div>
             </div>
         </div>
@@ -125,7 +129,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </h1>
             <div class="max-w-3xl glass p-8 rounded-2xl border-l-4 border-l-cyan-500" data-aos="fade-right">
                 <p class="text-lg md:text-xl text-zinc-300 font-light leading-relaxed italic">
-                    «Умный дом — это не набор гаджетов, а сложная инженерная логика. Мы создаем экосистемы, которые работают незаметно, обеспечивая ваш комфорт и безопасность без лишних движений. Локальное управление, полная приватность и безупречный монтаж».
+                    „ჭკვიანი სახლი არ არის გაჯეტების უბრალო ნაკრები, ეს რთული საინჟინრო ლოგიკაა. ჩვენ ვქმნით ეკოსისტემებს, რომლებიც მუშაობს შეუმჩნევლად და უზრუნველყოფს თქვენს კომფორტსა და უსაფრთხოებას ზედმეტი ძალისხმევის გარეშე. ლოკალური მართვა, სრული კონფიდენციალურობა და უნაკლო მონტაჟი.“
                 </p>
             </div>
         </div>
@@ -137,22 +141,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in">
                     <i class="fas fa-thermometer-half text-2xl text-cyan-400 mb-6"></i>
                     <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ CLIMATE_CONTROL ]</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">Интеграция всех систем отопления (радиаторы, теплый пол) и кондиционирования в единый сценарий. Экономия энергоресурсов до 25%.</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">გათბობის (რადიატორები, თბილი იატაკი) და კონდიცირების სისტემების ინტეგრაცია ერთიან სცენარში. ენერგორესურსების დაზოგვა 25%-მდე.</p>
                 </div>
                 <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in" data-aos-delay="100">
                     <i class="fas fa-lightbulb text-2xl text-cyan-400 mb-6"></i>
                     <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ SMART_LIGHTING ]</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">Биодинамическое освещение и сценарии «Кино», «Я ушел». Управление любыми типами ламп и штор из единого интерфейса.</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">ბიოდინამიკური განათება და სცენარები «კინო», «სახლიდან გავედი». ნებისმიერი ტიპის სანათებისა და ფარდების მართვა ერთიანი ინტერფეისიდან.</p>
                 </div>
                 <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in" data-aos-delay="200">
                     <i class="fas fa-shield-alt text-2xl text-cyan-400 mb-6"></i>
                     <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ SECURITY_LOGIC ]</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">Защита от протечек, датчики дыма и газа. Умные замки и видеодомофония с распознаванием лиц и мгновенными уведомлениями.</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">წყლის გაჟონვისგან დაცვა, კვამლისა და გაზის სენსორები. ჭკვიანი საკეტები და ვიდეოდომოფონები სახის ამოცნობითა და მყისიერი შეტყობინებებით.</p>
                 </div>
                 <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in" data-aos-delay="300">
                     <i class="fas fa-music text-2xl text-cyan-400 mb-6"></i>
                     <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ MULTIMEDIA ]</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">Управление медиазонами и аудиосистемами по всему дому. Автоматическое приглушение звука при вызовах или звонках.</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">მედიაზონებისა და აუდიოსისტემების მართვა მთელ სახლში. ხმის ავტომატური დაწევა შემომავალი ზარების დროს.</p>
                 </div>
             </div>
         </div>
@@ -160,22 +164,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section class="py-24 border-y border-white/5">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mono uppercase mb-16 text-center tracking-widest">Техническая <span class="text-cyan-400">Философия</span></h2>
+            <h2 class="text-3xl font-bold mono uppercase mb-16 text-center tracking-widest">ტექნიკური <span class="text-cyan-400">ფილოსოფია</span></h2>
             <div class="grid md:grid-cols-3 gap-12">
                 <div class="text-center" data-aos="fade-up">
                     <div class="inline-block p-4 rounded-full bg-cyan-500/10 mb-6"><i class="fas fa-server text-cyan-400 text-xl"></i></div>
                     <h4 class="mono text-xs mb-4 uppercase tracking-widest">[ LOCAL_FIRST ]</h4>
-                    <p class="text-sm text-zinc-500 font-light px-4">Ваша система работает на локальном сервере. Даже если пропадет интернет — дом останется умным.</p>
+                    <p class="text-sm text-zinc-500 font-light px-4">თქვენი სისტემა მუშაობს ლოკალურ სერვერზე. ინტერნეტის გათიშვის შემთხვევაშიც კი, სახლი რჩება ჭკვიანი.</p>
                 </div>
                 <div class="text-center" data-aos="fade-up" data-aos-delay="100">
                     <div class="inline-block p-4 rounded-full bg-cyan-500/10 mb-6"><i class="fas fa-user-lock text-cyan-400 text-xl"></i></div>
                     <h4 class="mono text-xs mb-4 uppercase tracking-widest">[ DATA_PRIVACY ]</h4>
-                    <p class="text-sm text-zinc-500 font-light px-4">Видеопотоки и логи событий не покидают периметр вашей сети. Никакого внешнего доступа без разрешения.</p>
+                    <p class="text-sm text-zinc-500 font-light px-4">ვიდეონაკადები და მოვლენების ლოგები არ ტოვებს თქვენი ქსელის პერიმეტრს. არავითარი გარე წვდომა ნებართვის გარეშე.</p>
                 </div>
                 <div class="text-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="inline-block p-4 rounded-full bg-cyan-500/10 mb-6"><i class="fas fa-microchip text-cyan-400 text-xl"></i></div>
                     <h4 class="mono text-xs mb-4 uppercase tracking-widest">[ CLEAN_MOUNTING ]</h4>
-                    <p class="text-sm text-zinc-500 font-light px-4">Промышленный стандарт сборки щитов. Каждый провод промаркирован, каждый узел эстетически выверен.</p>
+                    <p class="text-sm text-zinc-500 font-light px-4">ფარების აწყობის ინდუსტრიული სტანდარტი. თითოეული სადენი მარკირებულია, თითოეული კვანძი ესთეტიკურად უნაკლოა.</p>
                 </div>
             </div>
         </div>
@@ -199,47 +203,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container mx-auto px-6 max-w-4xl relative z-10" data-aos="fade-up">
             <div class="text-center mb-12">
                 <h2 class="text-lg sm:text-xl md:text-3xl font-bold mono uppercase tracking-widest md:tracking-[0.2em] mb-4 whitespace-normal md:whitespace-nowrap">[ SYSTEM_<span class="text-cyan-400">CONFIGURATOR</span> ]</h2>
-                <p class="text-sm text-zinc-400">Выберите модули комфорта и безопасности для вашего объекта, и система сформирует запрос для оценки.</p>
+                <p class="text-sm text-zinc-400">აირჩიეთ კომფორტისა და უსაფრთხოების მოდულები თქვენი ობიექტისთვის და სისტემა შექმნის მოთხოვნას შესაფასებლად.</p>
             </div>
 
             <form id="calcForm" class="glass p-8 md:p-12 rounded-2xl">
                 <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
-                    <label class="cb-container">Управление климатом (Отопление, теплый пол, кондиционеры)
-                        <input type="checkbox" value="Управление климатом">
+                    <label class="cb-container">კლიმატის კონტროლი (გათბობა, თბილი იატაკი, AC)
+                        <input type="checkbox" value="კლიმატის კონტროლი">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="cb-container">Световые сценарии и биодинамическое освещение
-                        <input type="checkbox" value="Световые сценарии">
+                    <label class="cb-container">სინათლის სცენარები და ბიოდინამიკური განათება
+                        <input type="checkbox" value="სინათლის სცენარები">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="cb-container">Моторизованные шторы и жалюзи
-                        <input type="checkbox" value="Управление шторами/жалюзи">
+                    <label class="cb-container">მოტორიზებული ფარდები და ჟალუზები
+                        <input type="checkbox" value="მოტორიზებული ფარდები">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="cb-container">Мультирум и управление медиа
-                        <input type="checkbox" value="Мультимедиа и аудио">
+                    <label class="cb-container">მულტირუმი და მედიის მართვა
+                        <input type="checkbox" value="მულტიმედია და აუდიო">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="cb-container">Защита от протечек (автоматические краны)
-                        <input type="checkbox" value="Антипотоп (защита от протечек)">
+                    <label class="cb-container">გაჟონვისგან დაცვა (ავტომატური ონკანები)
+                        <input type="checkbox" value="გაჟონვისგან დაცვა">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="cb-container">Охранная сигнализация и умные замки
-                        <input type="checkbox" value="Охранный контур и умные замки">
+                    <label class="cb-container">დაცვის სისტემა და ჭკვიანი საკეტები
+                        <input type="checkbox" value="უსაფრთხოება და ჭკვიანი საკეტები">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="cb-container">Интеграция видеонаблюдения (CCTV)
-                        <input type="checkbox" value="Интеграция видеонаблюдения">
+                    <label class="cb-container">ვიდეომეთვალყურეობის (CCTV) ინტეგრაცია
+                        <input type="checkbox" value="CCTV ინტეგრაცია">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="cb-container">Голосовое управление (Алиса / Siri)
-                        <input type="checkbox" value="Голосовое управление">
+                    <label class="cb-container">ხმოვანი მართვა (Siri / Alexa / Google)
+                        <input type="checkbox" value="ხმოვანი მართვა">
                         <span class="checkmark"></span>
                     </label>
                 </div>
 
                 <div class="text-center mt-8 border-t border-white/5 pt-8">
-                    <p class="mono text-[10px] text-zinc-500 mb-6 tracking-[0.2em] uppercase">Отправить запрос через:</p>
+                    <p class="mono text-[10px] text-zinc-500 mb-6 tracking-[0.2em] uppercase">გაგზავნეთ მოთხოვნა:</p>
                     
                     <div class="flex flex-wrap justify-center gap-3 md:gap-4">
                         <button type="button" onclick="sendToWhatsApp()" class="social-btn btn-wa inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
@@ -269,17 +273,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="glass p-10 rounded-2xl relative overflow-hidden" data-aos="fade-right">
                     <span class="step-number mono">01</span>
                     <h4 class="mono text-xs text-cyan-400 mb-4 uppercase tracking-widest">[ SYSTEM_ANALYSIS ]</h4>
-                    <p class="text-sm text-zinc-400 leading-relaxed relative z-10">Обсуждаем задачи, выявляем потребности и проектируем индивидуальную алгоритмическую логику.</p>
+                    <p class="text-sm text-zinc-400 leading-relaxed relative z-10">განვიხილავთ ამოცანებს, ვადგენთ საჭიროებებს და ვაპროექტებთ ინდივიდუალურ ალგორითმულ ლოგიკას.</p>
                 </div>
                 <div class="glass p-10 rounded-2xl relative overflow-hidden" data-aos="fade-right" data-aos-delay="100">
                     <span class="step-number mono">02</span>
                     <h4 class="mono text-xs text-cyan-400 mb-4 uppercase tracking-widest">[ CLEAN_DEPLOYMENT ]</h4>
-                    <p class="text-sm text-zinc-400 leading-relaxed relative z-10">Чистый IT-монтаж оборудования в щиты и аккуратная интеграция датчиков на объекте.</p>
+                    <p class="text-sm text-zinc-400 leading-relaxed relative z-10">მოწყობილობების სუფთა IT-მონტაჟი ფარებში და სენსორების აკურატული ინტეგრაცია ობიექტზე.</p>
                 </div>
                 <div class="glass p-10 rounded-2xl relative overflow-hidden" data-aos="fade-right" data-aos-delay="200">
                     <span class="step-number mono">03</span>
                     <h4 class="mono text-xs text-cyan-400 mb-4 uppercase tracking-widest">[ MONITORING_START ]</h4>
-                    <p class="text-sm text-zinc-400 leading-relaxed relative z-10">Передача всех ключей управления владельцу и пожизненная техподдержка 24/7.</p>
+                    <p class="text-sm text-zinc-400 leading-relaxed relative z-10">მართვის ყველა გასაღების გადაცემა მფლობელისთვის და სამუდამო ტექნიკური მხარდაჭერა 24/7.</p>
                 </div>
             </div>
         </div>
@@ -293,7 +297,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // Логика для мобильного меню
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         
@@ -315,7 +318,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }
         });
 
-        // Функции конфигуратора
+        // Грузинский генератор текста для мессенджеров
         function getMessageText() {
             const checkboxes = document.querySelectorAll('#calcForm input[type="checkbox"]:checked');
             let selectedModules = [];
@@ -324,15 +327,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 selectedModules.push("▪️ " + cb.value);
             });
 
-            let text = "Здравствуйте, команда Max0n! Хочу обсудить интеграцию инженерных систем. Меня интересуют следующие модули:\n\n";
+            let text = "გამარჯობა, Max0n-ის გუნდო! მსურს განვიხილო Smart Home სისტემების ინტეგრაცია. მაინტერესებს შემდეგი მოდულები:\n\n";
 
             if(selectedModules.length > 0) {
                 text += selectedModules.join("\n");
             } else {
-                text += "▪️ Базовая консультация и подбор архитектуры";
+                text += "▪️ საბაზისო კონსულტაცია და არქიტექტურის შერჩევა";
             }
 
-            text += "\n\nЖду обратной связи!";
+            text += "\n\nველი თქვენს პასუხს!";
             return text;
         }
 
@@ -351,7 +354,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         function sendToInstagram() {
             const text = getMessageText();
             navigator.clipboard.writeText(text).then(() => {
-                alert("Текст запроса скопирован!\n\nВы будете перенаправлены в Instagram. Просто вставьте скопированный текст в сообщение (Direct).");
+                alert("მოთხოვნის ტექსტი დაკოპირებულია!\n\nთქვენ გადახვალთ Instagram-ზე. უბრალოდ ჩასვით დაკოპირებული ტექსტი პირად შეტყობინებაში (Direct).");
                 window.open(`https://instagram.com/max0n_ge`, '_blank');
             }).catch(err => {
                 window.open(`https://instagram.com/max0n_ge`, '_blank');
@@ -361,7 +364,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         function sendToEmail() {
             const text = getMessageText();
             const email = "info@maxon.ge";
-            window.open(`mailto:${email}?subject=Запрос на систему умного дома&body=${encodeURIComponent(text)}`, '_self');
+            window.open(`mailto:${email}?subject=Smart Home მოთხოვნა&body=${encodeURIComponent(text)}`, '_self');
         }
     </script>
 </body>

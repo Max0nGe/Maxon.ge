@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTE928Y9DB"></script>
 <script>
@@ -17,7 +17,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-KGPPP259');</script>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security & CCTV | Max0n Control.</title>
+    <title>IT Networks & Wi-Fi | Max0n Control.</title>
     
     <link rel="icon" type="image/png" href="img/logo-full.png">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -34,22 +34,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .neon-btn:hover { background: rgba(0, 242, 255, 0.15); box-shadow: 0 0 25px rgba(0, 242, 255, 0.5), inset 0 0 10px rgba(0, 242, 255, 0.2); transform: translateY(-2px); border-color: #fff; }
         .neon-text { color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0, 242, 255, 0.4); }
 
-        /* ОБНОВЛЕННЫЕ СТИЛИ ДЛЯ КАРТОЧЕК С ФОНОМ */
+        /* Стили для карточек с фоном */
         .feature-card { position: relative; overflow: hidden; background: transparent !important; z-index: 1; }
         .feature-card:hover { border-color: var(--neon-cyan); transform: translateY(-5px); transition: all 0.4s ease; box-shadow: 0 10px 30px -10px rgba(0,242,255,0.2); }
-        
-        /* Слой с фотографией объекта */
         .feature-card::before { content: ''; position: absolute; inset: 0; background-image: var(--bg-image); background-size: cover; background-position: center; z-index: -2; opacity: 0.25; transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease, filter 0.5s ease; filter: grayscale(100%); }
-        
-        /* Затемняющий градиент для читаемости текста */
         .feature-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(11, 11, 11, 0.6), rgba(11, 11, 11, 0.95)); z-index: -1; }
-        
-        /* Эффект при наведении: цвет, яркость, плавное увеличение */
         .feature-card:hover::before { transform: scale(1.1); opacity: 0.6; filter: grayscale(0%); }
-        
-        /* Поднимаем текст и иконки над фонами */
         .feature-card > * { position: relative; z-index: 2; }
-        /* КОНЕЦ ОБНОВЛЕННЫХ СТИЛЕЙ КАРТОЧЕК */
 
         /* Стили для чекбоксов конфигуратора */
         .cb-container { display: block; position: relative; padding-left: 35px; margin-bottom: 12px; cursor: pointer; font-size: 14px; user-select: none; color: #a1a1aa; transition: 0.3s; }
@@ -80,27 +71,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav class="fixed top-0 w-full z-50 glass py-3 border-b border-cyan-500/10">
         <div class="container mx-auto px-6 flex justify-between items-center relative z-10">
-            <a href="index.html" class="flex items-center space-x-3 group relative">
+            <a href="index-en.html" class="flex items-center space-x-3 group relative">
                 <img src="img/logo-full.png" alt="MAX0N" class="h-10 lg:h-12 w-auto grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
                 <div class="h-8 w-px bg-zinc-800 lg:h-10"></div>
                 <span class="text-[8px] mono text-zinc-500 tracking-[0.5em] uppercase hidden sm:block">Engineering Bureau</span>
             </a>
             
             <div class="hidden lg:flex space-x-8 text-[10px] uppercase tracking-[0.3em] mono">
-                <a href="index.html" class="hover:text-cyan-400 transition text-zinc-500">Main</a>
-                <a href="smart-home.html" class="hover:text-cyan-400 transition text-zinc-500">Smart Home</a>
-                <a href="security.html" class="text-cyan-400 font-bold transition">Security</a>
-                <a href="networks.html" class="hover:text-cyan-400 transition text-zinc-500">Networks</a>
-                <a href="portfolio.html" class="hover:text-cyan-400 transition text-zinc-500">Portfolio</a>
+                <a href="index-en.html" class="hover:text-cyan-400 transition text-zinc-500">Main</a>
+                <a href="smart-home-en.html" class="hover:text-cyan-400 transition text-zinc-500">Smart Home</a>
+                <a href="security-en.html" class="hover:text-cyan-400 transition text-zinc-500">Security</a>
+                <a href="networks-en.html" class="neon-text font-bold transition">Networks</a>
+                <a href="portfolio-en.html" class="hover:text-cyan-400 transition text-zinc-500">Portfolio</a>
             </div>
 
             <div class="flex items-center space-x-4 mono text-[10px]">
                 <div class="hidden md:flex space-x-4 items-center">
-                    <a href="#" class="neon-text">RU</a>
+                    <a href="networks.html" class="hover:text-cyan-400 transition">RU</a>
                     <span class="opacity-20">/</span>
-                    <a href="security-ge.html" class="hover:text-cyan-400 transition">KA</a>
+                    <a href="networks-ge.html" class="hover:text-cyan-400 transition">GE</a>
                     <span class="opacity-20">/</span>
-                    <a href="security-en.html" class="hover:text-cyan-400 transition">EN</a>
+                    <a href="#" class="neon-text">EN</a>
                 </div>
                 <button id="mobile-menu-btn" class="lg:hidden text-cyan-400 text-2xl focus:outline-none ml-4 transition-transform duration-300">
                     <i class="fas fa-bars"></i>
@@ -110,17 +101,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div id="mobile-menu" class="lg:hidden bg-[#0B0B0B]/95 backdrop-blur-xl border-b border-cyan-500/20 absolute w-full left-0 top-full transition-all duration-300 ease-out opacity-0 invisible -translate-y-4">
             <div class="flex flex-col px-6 py-6 space-y-4 text-[12px] uppercase tracking-[0.3em] mono text-center">
-                <a href="index.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Main</a>
-                <a href="smart-home.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Smart Home</a>
-                <a href="security.html" class="neon-text transition py-3 border-b border-white/5">Security</a>
-                <a href="networks.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Networks</a>
-                <a href="portfolio.html" class="hover:neon-text transition text-zinc-400 py-3">Portfolio</a>
+                <a href="index-en.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Main</a>
+                <a href="smart-home-en.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Smart Home</a>
+                <a href="security-en.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Security</a>
+                <a href="networks-en.html" class="neon-text transition py-3 border-b border-white/5">Networks</a>
+                <a href="portfolio-en.html" class="hover:neon-text transition text-zinc-400 py-3">Portfolio</a>
                 <div class="flex justify-center space-x-6 pt-6 border-t border-white/5">
-                    <a href="#" class="neon-text">RU</a>
+                    <a href="networks.html" class="hover:text-cyan-400 transition">RU</a>
                     <span class="opacity-20">|</span>
-                    <a href="#" class="hover:text-cyan-400 transition">GE</a>
+                    <a href="networks-ge.html" class="hover:text-cyan-400 transition">GE</a>
                     <span class="opacity-20">|</span>
-                    <a href="#" class="hover:text-cyan-400 transition">EN</a>
+                    <a href="#" class="neon-text">EN</a>
                 </div>
             </div>
         </div>
@@ -131,14 +122,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="py-20 relative overflow-hidden">
         <div class="container mx-auto px-6 relative z-10">
             <p class="mono text-cyan-500 text-[10px] tracking-[0.5em] mb-4 uppercase" data-aos="fade-down">
-                [ SERVICE: SECURITY.LOG ]
+                [ SERVICE: NETWORKS.LOG ]
             </p>
             <h1 class="text-2xl sm:text-4xl md:text-6xl font-bold tracking-tighter uppercase mb-8 leading-tight" data-aos="fade-up">
-                [ SECURITY: <br class="sm:hidden"> <span class="neon-text">ACCESS_AND_VISION.LOG</span> ]
+                [ NETWORK: <br class="sm:hidden"> <span class="neon-text">IT_INFRASTRUCTURE.LOG</span> ]
             </h1>
             <div class="max-w-3xl glass p-8 rounded-2xl border-l-4 border-l-cyan-500" data-aos="fade-right">
                 <p class="text-lg md:text-xl text-zinc-300 font-light leading-relaxed italic">
-                    «Бескомпромиссная безопасность и абсолютная приватность. Мы проектируем системы видеонаблюдения и контроля доступа (СКУД) на базе защищенных IT-алгоритмов. Ваш объект под полным контролем, а данные никогда не покидают локальные серверы».
+                    "A reliable network is the nervous system of your property. We design and deploy seamless enterprise-grade gigabit networks for private residences and businesses. Zero dead zones, zero dropped connections, with full remote monitoring."
                 </p>
             </div>
         </div>
@@ -147,31 +138,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="py-20 bg-[#0d0d0d]">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in">
-                    <i class="fa-solid fa-video text-2xl neon-text mb-6"></i>
-                    <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ CCTV_SURVEILLANCE ]</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">Проектирование IP-видеонаблюдения высокого разрешения без слепых зон. Интеллектуальное распознавание лиц и номеров автомобилей. Локальные видеорегистраторы (NVR) с резервированием архива.</p>
+                <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in">
+                    <i class="fa-solid fa-wifi text-2xl neon-text mb-6"></i>
+                    <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ SEAMLESS_ROAMING ]</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Radio frequency planning for perfect 100% area coverage. Move around your house or yard without dropped connections: your devices instantly switch between access points.</p>
                 </div>
-                
-                <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fa-solid fa-fingerprint text-2xl neon-text mb-6"></i>
-                    <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ ACCESS_CONTROL ]</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">Многоуровневый контроль доступа для резиденций и бутик-отелей. Биометрия, NFC-метки и генерация временных пин-кодов. Полная история визитов в вашем смартфоне.</p>
+                <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fa-solid fa-server text-2xl neon-text mb-6"></i>
+                    <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ NETWORK_SEGMENTATION ]</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Dividing the network into virtual segments (VLAN). Guest Wi-Fi, cameras, smart home, and personal devices operate in isolated tunnels. Full protection against unauthorized access.</p>
                 </div>
-                
-                <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fa-solid fa-shield-halved text-2xl neon-text mb-6"></i>
-                    <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ PERIMETER_DEFENSE ]</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">Интеграция датчиков движения, лазерных барьеров и освещения. Алгоритм «Эффект присутствия» и автоматическое включение прожекторов при нарушении границ участка.</p>
-                </div>
-                
-                <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in" data-aos-delay="300">
+                <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in" data-aos-delay="200">
                     <i class="fa-solid fa-network-wired text-2xl neon-text mb-6"></i>
-                    <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ SECURE_REMOTE ]</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">Организация зашифрованных VPN-туннелей на базе оборудования корпоративного класса. Вы видите свои камеры из любой точки мира, но для хакеров система невидима.</p>
+                    <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ VPN_&_REMOTE ]</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Building secure VPN tunnels. You get encrypted direct access to your home, controllers, and cameras from anywhere in the world without relying on third-party servers.</p>
                 </div>
-
+                <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fa-solid fa-desktop text-2xl neon-text mb-6"></i>
+                    <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ PROACTIVE_MONITORING ]</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Implementing data center-grade monitoring systems. We track the status of switches, routers, and NVRs 24/7. Algorithms detect ISP failures before you even notice them.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -180,41 +166,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="absolute top-0 left-1/2 w-px h-full bg-cyan-500/10 -translate-x-1/2"></div>
         
         <div class="container mx-auto px-6 relative z-10">
-            <h2 class="text-3xl font-bold mono uppercase mb-16 text-center tracking-widest">IT-Архитектура <span class="neon-text">Безопасности</span></h2>
+            <h2 class="text-3xl font-bold mono uppercase mb-16 text-center tracking-widest">System <span class="neon-text">Foundation</span></h2>
             
             <div class="grid lg:grid-cols-3 gap-12 items-start">
                 
                 <div class="glass p-8 rounded-2xl h-full" data-aos="fade-right">
                     <div class="flex items-center mb-6">
-                        <i class="fa-solid fa-satellite-dish neon-text text-xl mr-4"></i>
-                        <h4 class="mono text-xs uppercase tracking-widest">[ PROACTIVE_MONITORING ]</h4>
+                        <i class="fa-solid fa-microchip neon-text text-xl mr-4"></i>
+                        <h4 class="mono text-xs uppercase tracking-widest">[ IT_APPROACH ]</h4>
                     </div>
                     <p class="text-sm text-zinc-400 font-light leading-relaxed">
-                        Мы не ждем, пока клиент заметит поломку. Используем систему <span class="text-white">Zabbix</span> для удаленного трекинга состояния серверов, NVR и камер. Если панель вызова уйдет в оффлайн, алгоритм сообщит нам об этом за секунды.
+                        We don't do traditional electrical "wiring". We build IT architecture. Every port is labeled, every cable is tested for gigabit throughput.
                     </p>
                 </div>
 
                 <div class="glass p-8 rounded-2xl h-full" data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-center mb-6">
-                        <i class="fa-solid fa-user-shield neon-text text-xl mr-4"></i>
-                        <h4 class="mono text-xs uppercase tracking-widest">[ ZERO_CLOUD_LEAKS ]</h4>
+                        <i class="fa-solid fa-shield-halved neon-text text-xl mr-4"></i>
+                        <h4 class="mono text-xs uppercase tracking-widest">[ CORE_STABILITY ]</h4>
                     </div>
                     <p class="text-sm text-zinc-400 font-light leading-relaxed">
-                        В премиальном сегменте конфиденциальность — закон. Никаких китайских облаков по умолчанию. Видеопоток изолирован, доступ к архиву есть только у владельца системы через зашифрованные каналы.
+                        We use only managed PoE switches and routers capable of handling years of uptime. No cheap consumer-grade gear, only equipment ready for peak loads.
                     </p>
                 </div>
 
                 <div class="glass p-8 rounded-2xl h-full relative overflow-hidden group" data-aos="fade-left" data-aos-delay="200">
                     <div class="absolute inset-0 z-0">
-                        <img src="img/main-rack-photo.jpg" alt="Server Rack" class="w-full h-full object-cover opacity-20 group-hover:opacity-40 transition duration-700 grayscale">
+                        <img src="img/main-rack-photo.jpg" alt="Server Rack 10U" class="w-full h-full object-cover opacity-20 group-hover:opacity-50 transition duration-700 grayscale group-hover:grayscale-0">
                     </div>
                     <div class="relative z-10">
                         <div class="flex items-center mb-6">
-                            <i class="fa-solid fa-server neon-text text-xl mr-4"></i>
-                            <h4 class="mono text-xs uppercase tracking-widest">[ IT_INFRASTRUCTURE ]</h4>
+                            <i class="fa-solid fa-layer-group neon-text text-xl mr-4"></i>
+                            <h4 class="mono text-xs uppercase tracking-widest">[ PERFECT_RACK ]</h4>
                         </div>
                         <p class="text-sm text-zinc-300 font-light leading-relaxed">
-                            Безопасность начинается с правильной сети. Мы не занимаемся классической «стройкой», мы строим отказоустойчивую IT-архитектуру с гигабитными PoE-коммутаторами и абсолютно чистым монтажом серверных узлов.
+                            The heart of the system is the telecommunications rack. We have elevated server node assembly to an art form. Perfect cable management guarantees zero overheating and instant diagnostics.
                         </p>
                     </div>
                 </div>
@@ -223,15 +209,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <section class="py-16 bg-[#080808]">
+    <section class="py-16 bg-[#080808] border-b border-white/5">
         <div class="container mx-auto px-6 text-center">
-            <p class="mono text-[10px] text-zinc-600 mb-8 tracking-[0.4em]">SECURITY_TECH_STACK</p>
+            <p class="mono text-[10px] text-zinc-600 mb-8 tracking-[0.4em]">NETWORK_TECH_STACK</p>
             <div class="flex flex-wrap justify-center gap-4 text-xs mono">
-                <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">UNIFI / UBIQUITI</span>
                 <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">KEENETIC</span>
-                <span class="px-4 py-2 border border-white/10 rounded-full text-cyan-500 border-cyan-500/30">ZABBIX</span>
-                <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">NETCRAZE</span>
-                <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">PoE+ SWITCHING</span>
+                <span class="px-4 py-2 border border-white/10 rounded-full text-cyan-500 border-cyan-500/30">NETCRAZE</span>
+                <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">ZABBIX</span>
+                <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">PoE+</span>
+                <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">VLAN</span>
+                <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">Wi-Fi 6</span>
             </div>
         </div>
     </section>
@@ -239,40 +226,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="py-24 border-t border-white/5 relative overflow-hidden">
         <div class="container mx-auto px-6 max-w-4xl relative z-10" data-aos="fade-up">
             <div class="text-center mb-12">
-                <h2 class="text-lg sm:text-xl md:text-3xl font-bold mono uppercase tracking-widest md:tracking-[0.2em] mb-4 whitespace-normal md:whitespace-nowrap">[ SECURITY_<span class="neon-text">CONFIGURATOR</span> ]</h2>
-                <p class="text-sm text-zinc-400">Выберите модули безопасности и доступа для вашего объекта, и система сформирует запрос для оценки.</p>
+                <h2 class="text-lg sm:text-xl md:text-3xl font-bold mono uppercase tracking-widest md:tracking-[0.2em] mb-4 whitespace-normal md:whitespace-nowrap">[ NETWORK_<span class="neon-text">CONFIGURATOR</span> ]</h2>
+                <p class="text-sm text-zinc-400">Select the IT infrastructure modules for your property, and the system will generate a request for evaluation.</p>
             </div>
 
             <form id="calcForm" class="glass p-8 md:p-12 rounded-2xl">
                 <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
-                    <label class="cb-container">Видеонаблюдение
-                        <input type="checkbox" value="Видеонаблюдение">
+                    <label class="cb-container">Seamless Wi-Fi (Roaming)
+                        <input type="checkbox" value="Seamless Wi-Fi (Roaming)">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="cb-container">Охранная система
-                        <input type="checkbox" value="Охранная система">
+                    <label class="cb-container">Whole-house LTE/5G Wi-Fi Backup
+                        <input type="checkbox" value="Whole-house LTE/5G Wi-Fi">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="cb-container">Охрана периметра
-                        <input type="checkbox" value="Охрана периметра">
+                    <label class="cb-container">Starlink Installation & Routing
+                        <input type="checkbox" value="Starlink Installation">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="cb-container">Пожарная сигнализация
-                        <input type="checkbox" value="Пожарная сигнализация">
+                    <label class="cb-container">Server Rack Design & Assembly
+                        <input type="checkbox" value="Server Rack Design & Assembly">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="cb-container">Умные замки и удаленный доступ
-                        <input type="checkbox" value="Умные замки и удаленный доступ">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="cb-container">Система защиты от протечек
-                        <input type="checkbox" value="Система защиты от протечек">
+                    <label class="cb-container">Audit & Upgrade of Current Network
+                        <input type="checkbox" value="Audit & Upgrade of Current Network">
                         <span class="checkmark"></span>
                     </label>
                 </div>
 
                 <div class="text-center mt-8 border-t border-white/5 pt-8">
-                    <p class="mono text-[10px] text-zinc-500 mb-6 tracking-[0.2em] uppercase">Отправить запрос через:</p>
+                    <p class="mono text-[10px] text-zinc-500 mb-6 tracking-[0.2em] uppercase">Send request via:</p>
                     
                     <div class="flex flex-wrap justify-center gap-3 md:gap-4">
                         <button type="button" onclick="sendToWhatsApp()" class="social-btn btn-wa inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
@@ -300,7 +283,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container mx-auto px-6 text-center">
             <div class="mono text-[9px] text-zinc-700 tracking-[0.2em] space-y-3">
                 <p class="text-cyan-950 uppercase tracking-[0.6em] mb-4 text-[10px]">[ SYSTEM.SECURITY: ENCRYPTED ]</p>
-                <p>Конфиденциальность — приоритет. Данные не покидают ваш локальный сервер.</p>
+                <p>Privacy is our priority. Data never leaves your local server.</p>
                 <div class="pt-4 opacity-30 uppercase">
                     &copy; 2026 MAXON.GE // IT SYSTEMS INTEGRATION // GEORGIA
                 </div>
@@ -334,7 +317,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }
         });
 
-        // Сбор текста из чекбоксов конфигуратора безопасности
+        // Сбор текста из чекбоксов конфигуратора сети на английском
         function getMessageText() {
             const checkboxes = document.querySelectorAll('#calcForm input[type="checkbox"]:checked');
             let selectedModules = [];
@@ -343,15 +326,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 selectedModules.push("▪️ " + cb.value);
             });
 
-            let text = "Здравствуйте, команда Max0n! Меня интересует интеграция систем безопасности. Выбраны следующие модули:\n\n";
+            let text = "Hello, Max0n team! I am interested in IT infrastructure and network design. I have selected the following tasks:\n\n";
 
             if(selectedModules.length > 0) {
                 text += selectedModules.join("\n");
             } else {
-                text += "▪️ Базовая консультация и подбор архитектуры";
+                text += "▪️ Basic audit and network architecture selection";
             }
 
-            text += "\n\nЖду обратной связи!";
+            text += "\n\nLooking forward to your reply!";
             return text;
         }
 
@@ -371,7 +354,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         function sendToInstagram() {
             const text = getMessageText();
             navigator.clipboard.writeText(text).then(() => {
-                alert("Текст запроса скопирован!\n\nВы будете перенаправлены в Instagram. Просто вставьте скопированный текст в сообщение (Direct).");
+                alert("Request text copied!\n\nYou will be redirected to Instagram. Just paste the copied text into the Direct Message.");
                 window.open(`https://instagram.com/max0n_ge`, '_blank');
             }).catch(err => {
                 window.open(`https://instagram.com/max0n_ge`, '_blank');
@@ -381,7 +364,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         function sendToEmail() {
             const text = getMessageText();
             const email = "info@maxon.ge";
-            window.open(`mailto:${email}?subject=Запрос на систему безопасности&body=${encodeURIComponent(text)}`, '_self');
+            window.open(`mailto:${email}?subject=IT Infrastructure Inquiry&body=${encodeURIComponent(text)}`, '_self');
         }
     </script>
 </body>

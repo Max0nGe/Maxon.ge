@@ -33,7 +33,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .neon-btn { border: 1px solid var(--neon-cyan); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; }
         .neon-btn:hover { background: rgba(0, 242, 255, 0.15); box-shadow: 0 0 25px rgba(0, 242, 255, 0.5), inset 0 0 10px rgba(0, 242, 255, 0.2); transform: translateY(-2px); border-color: #fff; }
         .neon-text { color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0, 242, 255, 0.4); }
-        .feature-card:hover { border-color: var(--neon-cyan); transform: translateY(-5px); transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,242,255,0.05); }
+
+        /* ОБНОВЛЕННЫЕ СТИЛИ ДЛЯ КАРТОЧЕК С ФОНОМ */
+        .feature-card { position: relative; overflow: hidden; background: transparent !important; z-index: 1; }
+        .feature-card:hover { border-color: var(--neon-cyan); transform: translateY(-5px); transition: all 0.4s ease; box-shadow: 0 10px 30px -10px rgba(0,242,255,0.2); }
+        
+        /* Слой с фотографией объекта */
+        .feature-card::before { content: ''; position: absolute; inset: 0; background-image: var(--bg-image); background-size: cover; background-position: center; z-index: -2; opacity: 0.25; transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease, filter 0.5s ease; filter: grayscale(100%); }
+        
+        /* Затемняющий градиент для читаемости текста */
+        .feature-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(11, 11, 11, 0.6), rgba(11, 11, 11, 0.95)); z-index: -1; }
+        
+        /* Эффект при наведении: цвет, яркость, плавное увеличение */
+        .feature-card:hover::before { transform: scale(1.1); opacity: 0.6; filter: grayscale(0%); }
+        
+        /* Поднимаем текст и иконки над фонами */
+        .feature-card > * { position: relative; z-index: 2; }
+        /* КОНЕЦ ОБНОВЛЕННЫХ СТИЛЕЙ КАРТОЧЕК */
+
+        /* Стили для чекбоксов конфигуратора */
+        .cb-container { display: block; position: relative; padding-left: 35px; margin-bottom: 12px; cursor: pointer; font-size: 14px; user-select: none; color: #a1a1aa; transition: 0.3s; }
+        .cb-container:hover { color: #fff; }
+        .cb-container input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
+        .checkmark { position: absolute; top: -2px; left: 0; height: 20px; width: 20px; background-color: transparent; border: 1px solid #52525b; border-radius: 4px; transition: 0.3s; }
+        .cb-container:hover input ~ .checkmark { border-color: var(--neon-cyan); }
+        .cb-container input:checked ~ .checkmark { background-color: rgba(0, 242, 255, 0.2); border-color: var(--neon-cyan); box-shadow: 0 0 10px rgba(0, 242, 255, 0.3); }
+        .checkmark:after { content: ""; position: absolute; display: none; }
+        .cb-container input:checked ~ .checkmark:after { display: block; }
+        .cb-container .checkmark:after { left: 6px; top: 2px; width: 6px; height: 12px; border: solid var(--neon-cyan); border-width: 0 2px 2px 0; transform: rotate(45deg); }
 
         /* Стили для кнопок соцсетей */
         .social-btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid transparent; position: relative; cursor: pointer; }
@@ -106,9 +133,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="mono text-cyan-500 text-[10px] tracking-[0.5em] mb-4 uppercase" data-aos="fade-down">
                 [ SERVICE: SECURITY.LOG ]
             </p>
-          <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tighter uppercase mb-8 leading-tight" data-aos="fade-up">
-    [ SECURITY: <br class="sm:hidden"> <span class="neon-text">ACCESS_AND_VISION.LOG</span> ]
-</h1>
+            <h1 class="text-2xl sm:text-4xl md:text-6xl font-bold tracking-tighter uppercase mb-8 leading-tight" data-aos="fade-up">
+                [ SECURITY: <br class="sm:hidden"> <span class="neon-text">ACCESS_AND_VISION.LOG</span> ]
+            </h1>
             <div class="max-w-3xl glass p-8 rounded-2xl border-l-4 border-l-cyan-500" data-aos="fade-right">
                 <p class="text-lg md:text-xl text-zinc-300 font-light leading-relaxed italic">
                     «Бескомпромиссная безопасность и абсолютная приватность. Мы проектируем системы видеонаблюдения и контроля доступа (СКУД) на базе защищенных IT-алгоритмов. Ваш объект под полным контролем, а данные никогда не покидают локальные серверы».
@@ -120,26 +147,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="py-20 bg-[#0d0d0d]">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="glass p-8 rounded-2xl feature-card" data-aos="zoom-in">
+                
+                <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in">
                     <i class="fa-solid fa-video text-2xl neon-text mb-6"></i>
                     <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ CCTV_SURVEILLANCE ]</h3>
-                    <p class="text-xs text-zinc-500 leading-relaxed">Проектирование IP-видеонаблюдения высокого разрешения без слепых зон. Интеллектуальное распознавание лиц и номеров автомобилей. Локальные видеорегистраторы (NVR) с резервированием архива.</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Проектирование IP-видеонаблюдения высокого разрешения без слепых зон. Интеллектуальное распознавание лиц и номеров автомобилей. Локальные видеорегистраторы (NVR) с резервированием архива.</p>
                 </div>
-                <div class="glass p-8 rounded-2xl feature-card" data-aos="zoom-in" data-aos-delay="100">
+                
+                <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in" data-aos-delay="100">
                     <i class="fa-solid fa-fingerprint text-2xl neon-text mb-6"></i>
                     <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ ACCESS_CONTROL ]</h3>
-                    <p class="text-xs text-zinc-500 leading-relaxed">Многоуровневый контроль доступа для резиденций и бутик-отелей. Биометрия, NFC-метки и генерация временных пин-кодов. Полная история визитов в вашем смартфоне.</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Многоуровневый контроль доступа для резиденций и бутик-отелей. Биометрия, NFC-метки и генерация временных пин-кодов. Полная история визитов в вашем смартфоне.</p>
                 </div>
-                <div class="glass p-8 rounded-2xl feature-card" data-aos="zoom-in" data-aos-delay="200">
+                
+                <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in" data-aos-delay="200">
                     <i class="fa-solid fa-shield-halved text-2xl neon-text mb-6"></i>
                     <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ PERIMETER_DEFENSE ]</h3>
-                    <p class="text-xs text-zinc-500 leading-relaxed">Интеграция датчиков движения, лазерных барьеров и освещения. Алгоритм «Эффект присутствия» и автоматическое включение прожекторов при нарушении границ участка.</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Интеграция датчиков движения, лазерных барьеров и освещения. Алгоритм «Эффект присутствия» и автоматическое включение прожекторов при нарушении границ участка.</p>
                 </div>
-                <div class="glass p-8 rounded-2xl feature-card" data-aos="zoom-in" data-aos-delay="300">
+                
+                <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in" data-aos-delay="300">
                     <i class="fa-solid fa-network-wired text-2xl neon-text mb-6"></i>
                     <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ SECURE_REMOTE ]</h3>
-                    <p class="text-xs text-zinc-500 leading-relaxed">Организация зашифрованных VPN-туннелей на базе оборудования корпоративного класса. Вы видите свои камеры из любой точки мира, но для хакеров система невидима.</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Организация зашифрованных VPN-туннелей на базе оборудования корпоративного класса. Вы видите свои камеры из любой точки мира, но для хакеров система невидима.</p>
                 </div>
+
             </div>
         </div>
     </section>
@@ -204,32 +236,72 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-    <footer id="contact" class="py-24 border-t border-white/5 bg-[#0B0B0B]">
-        <div class="container mx-auto px-6 text-center">
-            <p class="mono text-[10px] mb-12 tracking-[0.5em] uppercase text-zinc-600">[ CONNECT_DIRECTLY ]</p>
-            
-            <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-20">
-                <button type="button" onclick="sendToWhatsApp()" class="social-btn btn-wa inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
-                    <i class="fab fa-whatsapp text-lg md:text-xl mr-2"></i> WhatsApp
-                </button>
-                
-                <button type="button" onclick="sendToTelegram()" class="social-btn btn-tg inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
-                    <i class="fab fa-telegram-plane text-lg md:text-xl mr-2"></i> Telegram
-                </button>
-                
-                <button type="button" onclick="sendToInstagram()" class="social-btn btn-ig inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
-                    <i class="fab fa-instagram text-lg md:text-xl mr-2"></i> Instagram
-                </button>
-                
-                <button type="button" onclick="sendToEmail()" class="social-btn btn-mail inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
-                    <i class="far fa-envelope text-lg md:text-xl mr-2"></i> E-Mail
-                </button>
+    <section class="py-24 border-t border-white/5 relative overflow-hidden">
+        <div class="container mx-auto px-6 max-w-4xl relative z-10" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-lg sm:text-xl md:text-3xl font-bold mono uppercase tracking-widest md:tracking-[0.2em] mb-4 whitespace-normal md:whitespace-nowrap">[ SECURITY_<span class="neon-text">CONFIGURATOR</span> ]</h2>
+                <p class="text-sm text-zinc-400">Выберите модули безопасности и доступа для вашего объекта, и система сформирует запрос для оценки.</p>
             </div>
 
+            <form id="calcForm" class="glass p-8 md:p-12 rounded-2xl">
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
+                    <label class="cb-container">Видеонаблюдение
+                        <input type="checkbox" value="Видеонаблюдение">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="cb-container">Охранная система
+                        <input type="checkbox" value="Охранная система">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="cb-container">Охрана периметра
+                        <input type="checkbox" value="Охрана периметра">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="cb-container">Пожарная сигнализация
+                        <input type="checkbox" value="Пожарная сигнализация">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="cb-container">Умные замки и удаленный доступ
+                        <input type="checkbox" value="Умные замки и удаленный доступ">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="cb-container">Система защиты от протечек
+                        <input type="checkbox" value="Система защиты от протечек">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+
+                <div class="text-center mt-8 border-t border-white/5 pt-8">
+                    <p class="mono text-[10px] text-zinc-500 mb-6 tracking-[0.2em] uppercase">Отправить запрос через:</p>
+                    
+                    <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+                        <button type="button" onclick="sendToWhatsApp()" class="social-btn btn-wa inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
+                            <i class="fab fa-whatsapp text-lg md:text-xl mr-2"></i> WhatsApp
+                        </button>
+                        
+                        <button type="button" onclick="sendToTelegram()" class="social-btn btn-tg inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
+                            <i class="fab fa-telegram-plane text-lg md:text-xl mr-2"></i> Telegram
+                        </button>
+                        
+                        <button type="button" onclick="sendToInstagram()" class="social-btn btn-ig inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
+                            <i class="fab fa-instagram text-lg md:text-xl mr-2"></i> Instagram
+                        </button>
+                        
+                        <button type="button" onclick="sendToEmail()" class="social-btn btn-mail inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
+                            <i class="far fa-envelope text-lg md:text-xl mr-2"></i> E-Mail
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-12 border-t border-white/5 bg-[#0B0B0B]">
+        <div class="container mx-auto px-6 text-center">
             <div class="mono text-[9px] text-zinc-700 tracking-[0.2em] space-y-3">
                 <p class="text-cyan-950 uppercase tracking-[0.6em] mb-4 text-[10px]">[ SYSTEM.SECURITY: ENCRYPTED ]</p>
                 <p>Конфиденциальность — приоритет. Данные не покидают ваш локальный сервер.</p>
-                <div class="pt-8 opacity-30 uppercase">
+                <div class="pt-4 opacity-30 uppercase">
                     &copy; 2026 MAXON.GE // IT SYSTEMS INTEGRATION // GEORGIA
                 </div>
             </div>
@@ -262,9 +334,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }
         });
 
-        // Базовый текст для обращения со страницы Security
+        // Сбор текста из чекбоксов конфигуратора безопасности
         function getMessageText() {
-            return "Здравствуйте, команда Max0n! Меня интересует консультация по системам видеонаблюдения и контроля доступа (СКУД).";
+            const checkboxes = document.querySelectorAll('#calcForm input[type="checkbox"]:checked');
+            let selectedModules = [];
+            
+            checkboxes.forEach((cb) => {
+                selectedModules.push("▪️ " + cb.value);
+            });
+
+            let text = "Здравствуйте, команда Max0n! Меня интересует интеграция систем безопасности. Выбраны следующие модули:\n\n";
+
+            if(selectedModules.length > 0) {
+                text += selectedModules.join("\n");
+            } else {
+                text += "▪️ Базовая консультация и подбор архитектуры";
+            }
+
+            text += "\n\nЖду обратной связи!";
+            return text;
         }
 
         // Функции отправки в соцсети

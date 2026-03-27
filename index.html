@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KTE928Y9DB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KTE928Y9DB');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MaxOn | Always in Control.</title>
+    <title>Max0n | Always in Control.</title>
     
     <link rel="icon" type="image/png" href="img/logo-full.png">
     
@@ -24,6 +32,17 @@
         .tech-badge { background: rgba(0, 242, 255, 0.05); border: 1px solid rgba(0, 242, 255, 0.2); padding: 3px 10px; font-size: 10px; color: var(--neon-cyan); text-transform: uppercase; letter-spacing: 1px; }
         .scanline { width: 100%; height: 100px; z-index: 1; background: linear-gradient(0deg, rgba(0, 242, 255, 0) 0%, rgba(0, 242, 255, 0.05) 50%, rgba(0, 242, 255, 0) 100%); position: absolute; animation: scan 8s linear infinite; }
         @keyframes scan { 0% { top: -100px; } 100% { top: 100%; } }
+
+        /* Стили для кнопок соцсетей из Smart Home */
+        .social-btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid transparent; position: relative; cursor: pointer; }
+        .btn-wa { border-color: #25D366; color: #25D366; }
+        .btn-wa:hover { background: rgba(37, 211, 102, 0.1); box-shadow: 0 0 20px rgba(37, 211, 102, 0.4), inset 0 0 10px rgba(37, 211, 102, 0.2); border-color: #25D366; }
+        .btn-tg { border-color: #0088cc; color: #0088cc; }
+        .btn-tg:hover { background: rgba(0, 136, 204, 0.1); box-shadow: 0 0 20px rgba(0, 136, 204, 0.4), inset 0 0 10px rgba(0, 136, 204, 0.2); border-color: #0088cc; }
+        .btn-ig { border-color: #E1306C; color: #E1306C; }
+        .btn-ig:hover { background: rgba(225, 48, 108, 0.1); box-shadow: 0 0 20px rgba(225, 48, 108, 0.4), inset 0 0 10px rgba(225, 48, 108, 0.2); border-color: #E1306C; }
+        .btn-mail { border-color: #a8a29e; color: #a8a29e; }
+        .btn-mail:hover { background: rgba(168, 162, 158, 0.1); box-shadow: 0 0 20px rgba(168, 162, 158, 0.4), inset 0 0 10px rgba(168, 162, 158, 0.2); border-color: #fff; color: #fff; }
     </style>
 </head>
 <body>
@@ -37,21 +56,43 @@
                 <span class="text-[8px] mono text-zinc-500 tracking-[0.5em] uppercase hidden sm:block">Engineering Bureau</span>
             </a>
             
-           <div class="hidden lg:flex space-x-8 text-[10px] uppercase tracking-[0.3em] mono">
-    <a href="smart-home.html" class="hover:neon-text transition text-zinc-500">Smart Home</a>
-    <a href="security.html" class="hover:neon-text transition text-zinc-500">Security</a>
-    <a href="networks.html" class="hover:neon-text transition text-zinc-500">Networks</a>
-    <a href="portfolio.html" class="hover:neon-text transition text-zinc-500">Portfolio</a>
-</div>
+            <div class="hidden lg:flex space-x-8 text-[10px] uppercase tracking-[0.3em] mono">
+                <a href="smart-home.html" class="hover:neon-text transition text-zinc-500">Smart Home</a>
+                <a href="security.html" class="hover:neon-text transition text-zinc-500">Security</a>
+                <a href="networks.html" class="hover:neon-text transition text-zinc-500">Networks</a>
+                <a href="portfolio.html" class="hover:neon-text transition text-zinc-500">Portfolio</a>
+            </div>
 
             <div class="flex items-center space-x-4 mono text-[10px]">
-                <a href="#" class="neon-text">RU</a>
-                <span class="opacity-20">/</span>
-                <a href="#" class="hover:text-cyan-400 transition">GE</a>
-                <span class="opacity-20">/</span>
-                <a href="#" class="hover:text-cyan-400 transition">EN</a>
+                <div class="hidden md:flex space-x-4 items-center">
+                    <a href="#" class="neon-text">RU</a>
+                    <span class="opacity-20">/</span>
+                    <a href="#" class="hover:text-cyan-400 transition">GE</a>
+                    <span class="opacity-20">/</span>
+                    <a href="#" class="hover:text-cyan-400 transition">EN</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden text-cyan-400 text-2xl focus:outline-none ml-4 transition-transform duration-300">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
+
+        <div id="mobile-menu" class="lg:hidden bg-[#0B0B0B]/95 backdrop-blur-xl border-b border-cyan-500/20 absolute w-full left-0 top-full transition-all duration-300 ease-out opacity-0 invisible -translate-y-4">
+            <div class="flex flex-col px-6 py-6 space-y-4 text-[12px] uppercase tracking-[0.3em] mono text-center">
+                <a href="smart-home.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Smart Home</a>
+                <a href="security.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Security</a>
+                <a href="networks.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Networks</a>
+                <a href="portfolio.html" class="hover:neon-text transition text-zinc-400 py-3">Portfolio</a>
+                <div class="flex justify-center space-x-6 pt-6 border-t border-white/5">
+                    <a href="#" class="neon-text">RU</a>
+                    <span class="opacity-20">|</span>
+                    <a href="#" class="hover:text-cyan-400 transition">GE</a>
+                    <span class="opacity-20">|</span>
+                    <a href="#" class="hover:text-cyan-400 transition">EN</a>
+                </div>
+            </div>
+        </div>
+
         <div class="absolute inset-x-0 bottom-0 h-px bg-cyan-900 shadow-[0_0_10px_rgba(0,242,255,0.2)] opacity-30"></div>
     </nav>
 
@@ -64,10 +105,10 @@
             </h1>
             <p class="max-w-2xl mx-auto text-zinc-400 font-light text-base md:text-lg mb-12 leading-relaxed">
                 Проектируем и внедряем системы, которые работают незаметно. <br class="hidden md:block"> 
-                От идеальных серверных до полной автоматизации вашего объекта в Грузии.
+                От идеальных серверных до полной автоматизации вашего объекта.
             </p>
-            <a href="https://wa.me/995599501886" class="neon-btn inline-block px-12 py-5 neon-text mono text-xs uppercase tracking-[0.2em] font-bold">
-                Запустить проект
+            <a href="#contact" class="neon-btn inline-block px-12 py-5 neon-text mono text-xs uppercase tracking-[0.2em] font-bold">
+                Написать нам
             </a>
         </div>
     </section>
@@ -137,11 +178,25 @@
     <footer id="contact" class="py-24 border-t border-white/5 bg-[#080808]">
         <div class="container mx-auto px-6 text-center">
             <p class="mono text-[10px] mb-12 tracking-[0.5em] uppercase text-zinc-600">[ CONNECT_DIRECTLY ]</p>
-            <div class="flex justify-center gap-12 mb-20">
-                <a href="https://wa.me/995599501886" class="text-3xl text-zinc-600 hover:text-green-500 transition-all transform hover:scale-110"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://t.me/max0n_ge" class="text-3xl text-zinc-600 hover:text-cyan-400 transition-all transform hover:scale-110"><i class="fab fa-telegram"></i></a>
-                <a href="https://instagram.com/maxon.ge" class="text-3xl text-zinc-600 hover:text-pink-500 transition-all transform hover:scale-110"><i class="fab fa-instagram"></i></a>
+            
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-20">
+                <button type="button" onclick="sendToWhatsApp()" class="social-btn btn-wa inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
+                    <i class="fab fa-whatsapp text-lg md:text-xl mr-2"></i> WhatsApp
+                </button>
+                
+                <button type="button" onclick="sendToTelegram()" class="social-btn btn-tg inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
+                    <i class="fab fa-telegram-plane text-lg md:text-xl mr-2"></i> Telegram
+                </button>
+                
+                <button type="button" onclick="sendToInstagram()" class="social-btn btn-ig inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
+                    <i class="fab fa-instagram text-lg md:text-xl mr-2"></i> Instagram
+                </button>
+                
+                <button type="button" onclick="sendToEmail()" class="social-btn btn-mail inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
+                    <i class="far fa-envelope text-lg md:text-xl mr-2"></i> E-Mail
+                </button>
             </div>
+
             <div class="mono text-[9px] text-zinc-700 tracking-[0.2em] space-y-3">
                 <p class="text-cyan-950 uppercase tracking-[0.6em] mb-4 text-[10px]">[ SYSTEM.SECURITY: ENCRYPTED ]</p>
                 <p>Конфиденциальность — приоритет. Данные не покидают ваш локальный сервер.</p>
@@ -155,6 +210,64 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
+
+        // Обновленная логика для мобильного меню (с плавной анимацией)
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileBtn.addEventListener('click', () => {
+            // Переключаем классы анимации
+            mobileMenu.classList.toggle('opacity-0');
+            mobileMenu.classList.toggle('invisible');
+            mobileMenu.classList.toggle('-translate-y-4');
+            mobileMenu.classList.toggle('opacity-100');
+            mobileMenu.classList.toggle('visible');
+            mobileMenu.classList.toggle('translate-y-0');
+
+            // Меняем иконку бургера на крестик и добавляем анимацию вращения
+            const icon = mobileBtn.querySelector('i');
+            if(mobileMenu.classList.contains('opacity-0')) {
+                icon.classList.remove('fa-times', 'rotate-90');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times', 'rotate-90');
+            }
+        });
+
+        // Базовый текст для обращения с главной страницы
+        function getMessageText() {
+            return "Здравствуйте, команда Max0n! Хочу получить консультацию по системам автоматизации и безопасности.";
+        }
+
+        // Функции отправки в соцсети
+        function sendToWhatsApp() {
+            const text = getMessageText();
+            const waNumber = "995599501886";
+            window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function sendToTelegram() {
+            const text = getMessageText();
+            const tgUsername = "max0n_ge"; 
+            window.open(`https://t.me/${tgUsername}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function sendToInstagram() {
+            const text = getMessageText();
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Текст приветствия скопирован!\n\nВы будете перенаправлены в Instagram. Просто вставьте скопированный текст в сообщение (Direct).");
+                window.open(`https://instagram.com/max0n_ge`, '_blank');
+            }).catch(err => {
+                window.open(`https://instagram.com/max0n_ge`, '_blank');
+            });
+        }
+
+        function sendToEmail() {
+            const text = getMessageText();
+            const email = "info@maxon.ge";
+            window.open(`mailto:${email}?subject=Запрос на консультацию&body=${encodeURIComponent(text)}`, '_self');
+        }
     </script>
 </body>
 </html>

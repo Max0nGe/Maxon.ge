@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KGPPP259');</script>
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Home Integration | Max0n</title>
     
@@ -16,13 +21,17 @@
         body { background-color: var(--bg-dark); font-family: 'Inter', sans-serif; color: #e5e7eb; overflow-x: hidden; }
         .mono { font-family: 'JetBrains Mono', monospace; }
         .glass { background: rgba(17, 17, 17, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(0, 242, 255, 0.1); }
-        .neon-btn { border: 1px solid var(--neon-cyan); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; cursor: pointer; }
-        .neon-btn:hover { background: rgba(0, 242, 255, 0.15); box-shadow: 0 0 25px rgba(0, 242, 255, 0.5), inset 0 0 10px rgba(0, 242, 255, 0.2); transform: translateY(-2px); border-color: #fff; }
-        .neon-text { color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0, 242, 255, 0.4); }
-        .feature-card:hover { border-color: var(--neon-cyan); transform: translateY(-5px); transition: all 0.4s ease; }
         .step-number { font-size: 4rem; opacity: 0.05; position: absolute; right: 10px; top: -10px; font-weight: 800; }
         
-        /* Стили для кастомных чекбоксов */
+        /* Стили для карточек с фоном */
+        .feature-card { position: relative; overflow: hidden; background: transparent !important; z-index: 1; }
+        .feature-card:hover { border-color: var(--neon-cyan); transform: translateY(-5px); transition: all 0.4s ease; box-shadow: 0 10px 30px -10px rgba(0,242,255,0.2); }
+        .feature-card::before { content: ''; position: absolute; inset: 0; background-image: var(--bg-image); background-size: cover; background-position: center; z-index: -2; opacity: 0.25; transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease, filter 0.5s ease; filter: grayscale(100%); }
+        .feature-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(11, 11, 11, 0.6), rgba(11, 11, 11, 0.95)); z-index: -1; }
+        .feature-card:hover::before { transform: scale(1.1); opacity: 0.6; filter: grayscale(0%); }
+        .feature-card > * { position: relative; z-index: 2; }
+
+        /* Стили для чекбоксов */
         .cb-container { display: block; position: relative; padding-left: 35px; margin-bottom: 12px; cursor: pointer; font-size: 14px; user-select: none; color: #a1a1aa; transition: 0.3s; }
         .cb-container:hover { color: #fff; }
         .cb-container input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
@@ -32,28 +41,52 @@
         .checkmark:after { content: ""; position: absolute; display: none; }
         .cb-container input:checked ~ .checkmark:after { display: block; }
         .cb-container .checkmark:after { left: 6px; top: 2px; width: 6px; height: 12px; border: solid var(--neon-cyan); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+
+        /* Стили для кнопок соцсетей */
+        .social-btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid transparent; position: relative; cursor: pointer; }
+        .btn-wa { border-color: #25D366; color: #25D366; }
+        .btn-wa:hover { background: rgba(37, 211, 102, 0.1); box-shadow: 0 0 20px rgba(37, 211, 102, 0.4), inset 0 0 10px rgba(37, 211, 102, 0.2); border-color: #25D366; }
+        .btn-tg { border-color: #0088cc; color: #0088cc; }
+        .btn-tg:hover { background: rgba(0, 136, 204, 0.1); box-shadow: 0 0 20px rgba(0, 136, 204, 0.4), inset 0 0 10px rgba(0, 136, 204, 0.2); border-color: #0088cc; }
+        .btn-ig { border-color: #E1306C; color: #E1306C; }
+        .btn-ig:hover { background: rgba(225, 48, 108, 0.1); box-shadow: 0 0 20px rgba(225, 48, 108, 0.4), inset 0 0 10px rgba(225, 48, 108, 0.2); border-color: #E1306C; }
+        .btn-mail { border-color: #a8a29e; color: #a8a29e; }
+        .btn-mail:hover { background: rgba(168, 162, 158, 0.1); box-shadow: 0 0 20px rgba(168, 162, 158, 0.4), inset 0 0 10px rgba(168, 162, 158, 0.2); border-color: #fff; color: #fff; }
     </style>
 </head>
 <body class="pt-24">
-
-    <nav class="fixed top-0 w-full z-50 glass py-4 border-b border-white/5">
-        <div class="container mx-auto px-6 flex justify-between items-center">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGPPP259"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav class="fixed top-0 w-full z-50 glass py-3 border-b border-cyan-500/10">
+        <div class="container mx-auto px-6 flex justify-between items-center relative z-10">
             <a href="index.html" class="flex items-center space-x-3 group">
-                <img src="img/logo-full.png" alt="MAXON" class="h-10 w-auto grayscale transition-all duration-500 group-hover:grayscale-0">
+                <img src="img/logo-full.png" alt="MAX0N" class="h-10 lg:h-12 w-auto grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
+                <div class="h-8 w-px bg-zinc-800 lg:h-10"></div>
+                <span class="text-[8px] mono text-zinc-500 tracking-[0.5em] uppercase hidden sm:block">Engineering Bureau</span>
             </a>
-            <a href="index.html" class="mono text-[10px] uppercase tracking-widest hover:neon-text transition-colors">
-                <i class="fas fa-arrow-left mr-2"></i> Вернуться
-            </a>
-        </div>
-    </nav>
+            
+            <div class="hidden lg:flex space-x-8 text-[10px] uppercase tracking-[0.3em] mono">
+                <a href="index.html" class="hover:text-cyan-400 transition text-zinc-500">Main</a>
+                <a href="security.html" class="hover:text-cyan-400 transition text-zinc-500">Security</a>
+                <a href="networks.html" class="hover:text-cyan-400 transition text-zinc-500">Networks</a>
+                <a href="portfolio.html" class="text-cyan-400 font-bold transition">Portfolio</a>
+            </div>
 
+            <div class="flex items-center space-x-4 mono text-[10px]">
+                <a href="https://wa.me/995599501886" class="hover:text-cyan-400 transition"><i class="fab fa-whatsapp text-lg"></i></a>
+                <span class="opacity-20">/</span>
+                <a href="index.html" class="hover:text-cyan-400 transition">BACK_TO_MAIN</a>
+            </div>
+        </div>
+        <div class="absolute inset-x-0 bottom-0 h-px bg-cyan-900 shadow-[0_0_10px_rgba(0,242,255,0.2)] opacity-30"></div>
+    </nav>
     <section class="py-20 relative overflow-hidden">
         <div class="container mx-auto px-6 relative z-10">
             <p class="mono text-cyan-500 text-[10px] tracking-[0.5em] mb-4 uppercase" data-aos="fade-down">
                 [ SERVICE: SMART_HOME.LOG ]
             </p>
             <h1 class="text-4xl md:text-6xl font-bold tracking-tighter uppercase mb-8" data-aos="fade-up">
-                [ SMART_HOME: <span class="neon-text">INTEGRATION.LOG</span> ]
+                [ SMART_HOME: <span class="text-cyan-400" style="text-shadow: 0 0 10px rgba(0, 242, 255, 0.4);">INTEGRATION.LOG</span> ]
             </h1>
             <div class="max-w-3xl glass p-8 rounded-2xl border-l-4 border-l-cyan-500" data-aos="fade-right">
                 <p class="text-lg md:text-xl text-zinc-300 font-light leading-relaxed italic">
@@ -66,25 +99,25 @@
     <section class="py-20 bg-[#0d0d0d]">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="glass p-8 rounded-2xl feature-card" data-aos="zoom-in">
-                    <i class="fas fa-thermometer-half text-2xl neon-text mb-6"></i>
+                <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in">
+                    <i class="fas fa-thermometer-half text-2xl text-cyan-400 mb-6"></i>
                     <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ CLIMATE_CONTROL ]</h3>
-                    <p class="text-xs text-zinc-500 leading-relaxed">Интеграция всех систем отопления (радиаторы, теплый пол) и кондиционирования в единый сценарий. Экономия энергоресурсов до 25%.</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Интеграция всех систем отопления (радиаторы, теплый пол) и кондиционирования в единый сценарий. Экономия энергоресурсов до 25%.</p>
                 </div>
-                <div class="glass p-8 rounded-2xl feature-card" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fas fa-lightbulb text-2xl neon-text mb-6"></i>
+                <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-lightbulb text-2xl text-cyan-400 mb-6"></i>
                     <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ SMART_LIGHTING ]</h3>
-                    <p class="text-xs text-zinc-500 leading-relaxed">Биодинамическое освещение и сценарии «Кино», «Я ушел». Управление любыми типами ламп и штор из единого интерфейса.</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Биодинамическое освещение и сценарии «Кино», «Я ушел». Управление любыми типами ламп и штор из единого интерфейса.</p>
                 </div>
-                <div class="glass p-8 rounded-2xl feature-card" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fas fa-shield-alt text-2xl neon-text mb-6"></i>
+                <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-shield-alt text-2xl text-cyan-400 mb-6"></i>
                     <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ SECURITY_LOGIC ]</h3>
-                    <p class="text-xs text-zinc-500 leading-relaxed">Защита от протечек, датчики дыма и газа. Умные замки и видеодомофония с распознаванием лиц и мгновенными уведомлениями.</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Защита от протечек, датчики дыма и газа. Умные замки и видеодомофония с распознаванием лиц и мгновенными уведомлениями.</p>
                 </div>
-                <div class="glass p-8 rounded-2xl feature-card" data-aos="zoom-in" data-aos-delay="300">
-                    <i class="fas fa-music text-2xl neon-text mb-6"></i>
+                <div class="glass p-8 rounded-2xl feature-card" style="--bg-image: url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&q=80&w=800');" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-music text-2xl text-cyan-400 mb-6"></i>
                     <h3 class="mono text-sm uppercase mb-4 text-white font-bold tracking-widest">[ MULTIMEDIA ]</h3>
-                    <p class="text-xs text-zinc-500 leading-relaxed">Управление медиазонами и аудиосистемами по всему дому. Автоматическое приглушение звука при вызовах или звонках.</p>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Управление медиазонами и аудиосистемами по всему дому. Автоматическое приглушение звука при вызовах или звонках.</p>
                 </div>
             </div>
         </div>
@@ -92,20 +125,20 @@
 
     <section class="py-24 border-y border-white/5">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mono uppercase mb-16 text-center tracking-widest">Техническая <span class="neon-text">Философия</span></h2>
+            <h2 class="text-3xl font-bold mono uppercase mb-16 text-center tracking-widest">Техническая <span class="text-cyan-400">Философия</span></h2>
             <div class="grid md:grid-cols-3 gap-12">
                 <div class="text-center" data-aos="fade-up">
-                    <div class="inline-block p-4 rounded-full bg-cyan-500/10 mb-6"><i class="fas fa-server neon-text text-xl"></i></div>
+                    <div class="inline-block p-4 rounded-full bg-cyan-500/10 mb-6"><i class="fas fa-server text-cyan-400 text-xl"></i></div>
                     <h4 class="mono text-xs mb-4 uppercase tracking-widest">[ LOCAL_FIRST ]</h4>
                     <p class="text-sm text-zinc-500 font-light px-4">Ваша система работает на локальном сервере. Даже если пропадет интернет — дом останется умным.</p>
                 </div>
                 <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="inline-block p-4 rounded-full bg-cyan-500/10 mb-6"><i class="fas fa-user-lock neon-text text-xl"></i></div>
+                    <div class="inline-block p-4 rounded-full bg-cyan-500/10 mb-6"><i class="fas fa-user-lock text-cyan-400 text-xl"></i></div>
                     <h4 class="mono text-xs mb-4 uppercase tracking-widest">[ DATA_PRIVACY ]</h4>
                     <p class="text-sm text-zinc-500 font-light px-4">Видеопотоки и логи событий не покидают периметр вашей сети. Никакого внешнего доступа без разрешения.</p>
                 </div>
                 <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="inline-block p-4 rounded-full bg-cyan-500/10 mb-6"><i class="fas fa-microchip neon-text text-xl"></i></div>
+                    <div class="inline-block p-4 rounded-full bg-cyan-500/10 mb-6"><i class="fas fa-microchip text-cyan-400 text-xl"></i></div>
                     <h4 class="mono text-xs mb-4 uppercase tracking-widest">[ CLEAN_MOUNTING ]</h4>
                     <p class="text-sm text-zinc-500 font-light px-4">Промышленный стандарт сборки щитов. Каждый провод промаркирован, каждый узел эстетически выверен.</p>
                 </div>
@@ -117,12 +150,12 @@
         <div class="container mx-auto px-6 text-center">
             <p class="mono text-[10px] text-zinc-600 mb-12 tracking-[0.4em]">CURRENT_TECH_STACK</p>
             <div class="flex flex-wrap justify-center gap-4 text-xs mono">
-                <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">KINCONY</span>
+                <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">Sonoff</span>
                 <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">AQARA</span>
                 <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">HOME ASSISTANT</span>
-                <span class="px-4 py-2 border border-white/10 rounded-full text-cyan-500 border-cyan-500/30">MATTER</span>
+                <span class="px-4 py-2 border border-cyan-500/30 rounded-full text-cyan-400">MATTER</span>
                 <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">ZIGBEE</span>
-                <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">SPRUT.HUB</span>
+                <span class="px-4 py-2 border border-white/10 rounded-full text-zinc-400">ModBus</span>
             </div>
         </div>
     </section>
@@ -130,7 +163,7 @@
     <section class="py-24 border-t border-white/5 relative overflow-hidden">
         <div class="container mx-auto px-6 max-w-4xl relative z-10" data-aos="fade-up">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mono uppercase tracking-[0.2em] mb-4">[ SYSTEM_<span class="neon-text">CONFIGURATOR</span> ]</h2>
+                <h2 class="text-3xl font-bold mono uppercase tracking-[0.2em] mb-4">[ SYSTEM_<span class="text-cyan-400">CONFIGURATOR</span> ]</h2>
                 <p class="text-sm text-zinc-400">Выберите модули комфорта и безопасности для вашего объекта, и система сформирует запрос для оценки.</p>
             </div>
 
@@ -170,19 +203,34 @@
                     </label>
                 </div>
 
-                <div class="text-center">
-                    <button type="button" onclick="sendToWhatsApp()" class="neon-btn inline-block px-10 py-5 neon-text mono text-xs uppercase tracking-[0.2em] font-bold w-full md:w-auto">
-                        <i class="fab fa-whatsapp text-lg mr-2"></i> Отправить запрос в Max0n
-                    </button>
-                    <p class="mono text-[9px] text-zinc-600 mt-4 tracking-widest uppercase">* Будет сформировано сообщение для WhatsApp</p>
+                <div class="text-center mt-8 border-t border-white/5 pt-8">
+                    <p class="mono text-[10px] text-zinc-500 mb-6 tracking-[0.2em] uppercase">Отправить запрос через:</p>
+                    
+                    <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+                        <button type="button" onclick="sendToWhatsApp()" class="social-btn btn-wa inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
+                            <i class="fab fa-whatsapp text-lg md:text-xl mr-2"></i> WhatsApp
+                        </button>
+                        
+                        <button type="button" onclick="sendToTelegram()" class="social-btn btn-tg inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
+                            <i class="fab fa-telegram-plane text-lg md:text-xl mr-2"></i> Telegram
+                        </button>
+                        
+                        <button type="button" onclick="sendToInstagram()" class="social-btn btn-ig inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
+                            <i class="fab fa-instagram text-lg md:text-xl mr-2"></i> Instagram
+                        </button>
+                        
+                        <button type="button" onclick="sendToEmail()" class="social-btn btn-mail inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
+                            <i class="far fa-envelope text-lg md:text-xl mr-2"></i> E-Mail
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
     </section>
 
     <script>
-        function sendToWhatsApp() {
-            // Собираем все отмеченные чекбоксы
+        // Общая функция для сбора текста из чекбоксов
+        function getMessageText() {
             const checkboxes = document.querySelectorAll('#calcForm input[type="checkbox"]:checked');
             let selectedModules = [];
             
@@ -190,8 +238,7 @@
                 selectedModules.push("▪️ " + cb.value);
             });
 
-            // Формируем текст сообщения
-            let text = "Здравствуйте, команда Max0n! Хочу обсудить интеграцию инженерных систем на моем объекте. Меня интересуют следующие модули комфорта и безопасности:\n\n";
+            let text = "Здравствуйте, команда Max0n! Хочу обсудить интеграцию инженерных систем. Меня интересуют следующие модули:\n\n";
 
             if(selectedModules.length > 0) {
                 text += selectedModules.join("\n");
@@ -200,11 +247,36 @@
             }
 
             text += "\n\nЖду обратной связи!";
+            return text;
+        }
 
-            // Кодируем текст для URL и открываем WhatsApp (использую твой номер)
-            const encodedText = encodeURIComponent(text);
+        function sendToWhatsApp() {
+            const text = getMessageText();
             const waNumber = "995599501886";
-            window.open(`https://wa.me/${waNumber}?text=${encodedText}`, '_blank');
+            window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function sendToTelegram() {
+            const text = getMessageText();
+            const tgUsername = "max0n_ge"; // Ваш юзернейм в ТГ (можно изменить)
+            window.open(`https://t.me/${tgUsername}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function sendToInstagram() {
+            const text = getMessageText();
+            // Копируем текст в буфер, так как Instagram не подтягивает текст по ссылке
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Текст запроса скопирован!\n\nВы будете перенаправлены в Instagram. Просто вставьте скопированный текст в сообщение (Direct).");
+                window.open(`https://instagram.com/max0n_ge`, '_blank');
+            }).catch(err => {
+                window.open(`https://instagram.com/max0n_ge`, '_blank');
+            });
+        }
+
+        function sendToEmail() {
+            const text = getMessageText();
+            const email = "info@maxon.ge";
+            window.open(`mailto:${email}?subject=Запрос на систему умного дома&body=${encodeURIComponent(text)}`, '_self');
         }
     </script>
 
@@ -213,17 +285,17 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="glass p-10 rounded-2xl relative overflow-hidden" data-aos="fade-right">
                     <span class="step-number mono">01</span>
-                    <h4 class="mono text-xs neon-text mb-4 uppercase tracking-widest">[ SYSTEM_ANALYSIS ]</h4>
+                    <h4 class="mono text-xs text-cyan-400 mb-4 uppercase tracking-widest">[ SYSTEM_ANALYSIS ]</h4>
                     <p class="text-sm text-zinc-400 leading-relaxed relative z-10">Обсуждаем задачи, выявляем потребности и проектируем индивидуальную алгоритмическую логику.</p>
                 </div>
                 <div class="glass p-10 rounded-2xl relative overflow-hidden" data-aos="fade-right" data-aos-delay="100">
                     <span class="step-number mono">02</span>
-                    <h4 class="mono text-xs neon-text mb-4 uppercase tracking-widest">[ CLEAN_DEPLOYMENT ]</h4>
+                    <h4 class="mono text-xs text-cyan-400 mb-4 uppercase tracking-widest">[ CLEAN_DEPLOYMENT ]</h4>
                     <p class="text-sm text-zinc-400 leading-relaxed relative z-10">Чистый IT-монтаж оборудования в щиты и аккуратная интеграция датчиков на объекте.</p>
                 </div>
                 <div class="glass p-10 rounded-2xl relative overflow-hidden" data-aos="fade-right" data-aos-delay="200">
                     <span class="step-number mono">03</span>
-                    <h4 class="mono text-xs neon-text mb-4 uppercase tracking-widest">[ MONITORING_START ]</h4>
+                    <h4 class="mono text-xs text-cyan-400 mb-4 uppercase tracking-widest">[ MONITORING_START ]</h4>
                     <p class="text-sm text-zinc-400 leading-relaxed relative z-10">Передача всех ключей управления владельцу и пожизненная техподдержка 24/7.</p>
                 </div>
             </div>

@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KTE928Y9DB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KTE928Y9DB');
+</script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KGPPP259');</script>
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security & CCTV | Max0n Control.</title>
     
@@ -20,31 +34,70 @@
         .neon-btn:hover { background: rgba(0, 242, 255, 0.15); box-shadow: 0 0 25px rgba(0, 242, 255, 0.5), inset 0 0 10px rgba(0, 242, 255, 0.2); transform: translateY(-2px); border-color: #fff; }
         .neon-text { color: var(--neon-cyan); text-shadow: 0 0 10px rgba(0, 242, 255, 0.4); }
         .feature-card:hover { border-color: var(--neon-cyan); transform: translateY(-5px); transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,242,255,0.05); }
+
+        /* Стили для кнопок соцсетей */
+        .social-btn { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid transparent; position: relative; cursor: pointer; }
+        .btn-wa { border-color: #25D366; color: #25D366; }
+        .btn-wa:hover { background: rgba(37, 211, 102, 0.1); box-shadow: 0 0 20px rgba(37, 211, 102, 0.4), inset 0 0 10px rgba(37, 211, 102, 0.2); border-color: #25D366; }
+        .btn-tg { border-color: #0088cc; color: #0088cc; }
+        .btn-tg:hover { background: rgba(0, 136, 204, 0.1); box-shadow: 0 0 20px rgba(0, 136, 204, 0.4), inset 0 0 10px rgba(0, 136, 204, 0.2); border-color: #0088cc; }
+        .btn-ig { border-color: #E1306C; color: #E1306C; }
+        .btn-ig:hover { background: rgba(225, 48, 108, 0.1); box-shadow: 0 0 20px rgba(225, 48, 108, 0.4), inset 0 0 10px rgba(225, 48, 108, 0.2); border-color: #E1306C; }
+        .btn-mail { border-color: #a8a29e; color: #a8a29e; }
+        .btn-mail:hover { background: rgba(168, 162, 158, 0.1); box-shadow: 0 0 20px rgba(168, 162, 158, 0.4), inset 0 0 10px rgba(168, 162, 158, 0.2); border-color: #fff; color: #fff; }
     </style>
 </head>
 <body class="pt-24">
 
-    <nav class="fixed top-0 w-full z-50 glass py-3 border-b border-cyan-500/10">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGPPP259"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<nav class="fixed top-0 w-full z-50 glass py-3 border-b border-cyan-500/10">
         <div class="container mx-auto px-6 flex justify-between items-center relative z-10">
-            <a href="index.html" class="flex items-center space-x-3 group">
+            <a href="index.html" class="flex items-center space-x-3 group relative">
                 <img src="img/logo-full.png" alt="MAX0N" class="h-10 lg:h-12 w-auto grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105">
                 <div class="h-8 w-px bg-zinc-800 lg:h-10"></div>
                 <span class="text-[8px] mono text-zinc-500 tracking-[0.5em] uppercase hidden sm:block">Engineering Bureau</span>
             </a>
             
             <div class="hidden lg:flex space-x-8 text-[10px] uppercase tracking-[0.3em] mono">
-                <a href="index.html#about" class="hover:neon-text transition text-zinc-500">Инженерия</a>
-                <a href="smart-home.html" class="hover:neon-text transition text-zinc-500">Smart Home</a>
-                <a href="security.html" class="neon-text font-bold transition">Security</a>
-                <a href="index.html#portfolio" class="hover:neon-text transition text-zinc-500">Portfolio</a>
+                <a href="index.html" class="hover:text-cyan-400 transition text-zinc-500">Main</a>
+                <a href="smart-home.html" class="hover:text-cyan-400 transition text-zinc-500">Smart Home</a>
+                <a href="security.html" class="text-cyan-400 font-bold transition">Security</a>
+                <a href="networks.html" class="hover:text-cyan-400 transition text-zinc-500">Networks</a>
+                <a href="portfolio.html" class="hover:text-cyan-400 transition text-zinc-500">Portfolio</a>
             </div>
 
             <div class="flex items-center space-x-4 mono text-[10px]">
-                <a href="https://wa.me/995599501886" class="hover:neon-text transition"><i class="fab fa-whatsapp text-lg"></i></a>
-                <span class="opacity-20">/</span>
-                <a href="index.html" class="hover:text-cyan-400 transition">BACK_TO_MAIN</a>
+                <div class="hidden md:flex space-x-4 items-center">
+                    <a href="#" class="neon-text">RU</a>
+                    <span class="opacity-20">/</span>
+                    <a href="#" class="hover:text-cyan-400 transition">GE</a>
+                    <span class="opacity-20">/</span>
+                    <a href="#" class="hover:text-cyan-400 transition">EN</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden text-cyan-400 text-2xl focus:outline-none ml-4 transition-transform duration-300">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
+
+        <div id="mobile-menu" class="lg:hidden bg-[#0B0B0B]/95 backdrop-blur-xl border-b border-cyan-500/20 absolute w-full left-0 top-full transition-all duration-300 ease-out opacity-0 invisible -translate-y-4">
+            <div class="flex flex-col px-6 py-6 space-y-4 text-[12px] uppercase tracking-[0.3em] mono text-center">
+                <a href="index.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Main</a>
+                <a href="smart-home.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Smart Home</a>
+                <a href="security.html" class="neon-text transition py-3 border-b border-white/5">Security</a>
+                <a href="networks.html" class="hover:neon-text transition text-zinc-400 py-3 border-b border-white/5">Networks</a>
+                <a href="portfolio.html" class="hover:neon-text transition text-zinc-400 py-3">Portfolio</a>
+                <div class="flex justify-center space-x-6 pt-6 border-t border-white/5">
+                    <a href="#" class="neon-text">RU</a>
+                    <span class="opacity-20">|</span>
+                    <a href="#" class="hover:text-cyan-400 transition">GE</a>
+                    <span class="opacity-20">|</span>
+                    <a href="#" class="hover:text-cyan-400 transition">EN</a>
+                </div>
+            </div>
+        </div>
+
         <div class="absolute inset-x-0 bottom-0 h-px bg-cyan-900 shadow-[0_0_10px_rgba(0,242,255,0.2)] opacity-30"></div>
     </nav>
 
@@ -138,7 +191,7 @@
         </div>
     </section>
 
-    <section class="py-16 bg-[#080808] border-b border-white/5">
+    <section class="py-16 bg-[#080808]">
         <div class="container mx-auto px-6 text-center">
             <p class="mono text-[10px] text-zinc-600 mb-8 tracking-[0.4em]">SECURITY_TECH_STACK</p>
             <div class="flex flex-wrap justify-center gap-4 text-xs mono">
@@ -151,14 +204,97 @@
         </div>
     </section>
 
-    <footer class="py-12 bg-[#0B0B0B] text-center">
-        <a href="https://wa.me/995599501886" class="neon-btn inline-block px-10 py-4 neon-text mono text-xs uppercase tracking-[0.2em] font-bold mb-8">
-            <i class="fa-solid fa-shield-halved mr-2"></i> Проектировать безопасность
-        </a>
-        <p class="mono text-[9px] text-zinc-600 tracking-widest uppercase block">© 2026 MAX0N // ENGINEERING BUREAU // GEORGIA</p>
+    <footer id="contact" class="py-24 border-t border-white/5 bg-[#0B0B0B]">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mono text-[10px] mb-12 tracking-[0.5em] uppercase text-zinc-600">[ CONNECT_DIRECTLY ]</p>
+            
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-20">
+                <button type="button" onclick="sendToWhatsApp()" class="social-btn btn-wa inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
+                    <i class="fab fa-whatsapp text-lg md:text-xl mr-2"></i> WhatsApp
+                </button>
+                
+                <button type="button" onclick="sendToTelegram()" class="social-btn btn-tg inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
+                    <i class="fab fa-telegram-plane text-lg md:text-xl mr-2"></i> Telegram
+                </button>
+                
+                <button type="button" onclick="sendToInstagram()" class="social-btn btn-ig inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
+                    <i class="fab fa-instagram text-lg md:text-xl mr-2"></i> Instagram
+                </button>
+                
+                <button type="button" onclick="sendToEmail()" class="social-btn btn-mail inline-flex items-center px-5 py-3 rounded-lg mono text-[10px] md:text-xs uppercase tracking-widest font-bold">
+                    <i class="far fa-envelope text-lg md:text-xl mr-2"></i> E-Mail
+                </button>
+            </div>
+
+            <div class="mono text-[9px] text-zinc-700 tracking-[0.2em] space-y-3">
+                <p class="text-cyan-950 uppercase tracking-[0.6em] mb-4 text-[10px]">[ SYSTEM.SECURITY: ENCRYPTED ]</p>
+                <p>Конфиденциальность — приоритет. Данные не покидают ваш локальный сервер.</p>
+                <div class="pt-8 opacity-30 uppercase">
+                    &copy; 2026 MAXON.GE // IT SYSTEMS INTEGRATION // GEORGIA
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Логика для мобильного меню
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('opacity-0');
+            mobileMenu.classList.toggle('invisible');
+            mobileMenu.classList.toggle('-translate-y-4');
+            mobileMenu.classList.toggle('opacity-100');
+            mobileMenu.classList.toggle('visible');
+            mobileMenu.classList.toggle('translate-y-0');
+
+            const icon = mobileBtn.querySelector('i');
+            if(mobileMenu.classList.contains('opacity-0')) {
+                icon.classList.remove('fa-times', 'rotate-90');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times', 'rotate-90');
+            }
+        });
+
+        // Базовый текст для обращения со страницы Security
+        function getMessageText() {
+            return "Здравствуйте, команда Max0n! Меня интересует консультация по системам видеонаблюдения и контроля доступа (СКУД).";
+        }
+
+        // Функции отправки в соцсети
+        function sendToWhatsApp() {
+            const text = getMessageText();
+            const waNumber = "995599501886";
+            window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function sendToTelegram() {
+            const text = getMessageText();
+            const tgUsername = "max0n_ge"; 
+            window.open(`https://t.me/${tgUsername}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function sendToInstagram() {
+            const text = getMessageText();
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Текст запроса скопирован!\n\nВы будете перенаправлены в Instagram. Просто вставьте скопированный текст в сообщение (Direct).");
+                window.open(`https://instagram.com/max0n_ge`, '_blank');
+            }).catch(err => {
+                window.open(`https://instagram.com/max0n_ge`, '_blank');
+            });
+        }
+
+        function sendToEmail() {
+            const text = getMessageText();
+            const email = "info@maxon.ge";
+            window.open(`mailto:${email}?subject=Запрос на систему безопасности&body=${encodeURIComponent(text)}`, '_self');
+        }
+    </script>
 </body>
 </html>
